@@ -1,40 +1,105 @@
-# Título do Projeto
+# FISCRO — Gerenciador de Tarefas
 
-`CURSO: Sistemas de Informação`
+> Aplicação web para registro e acompanhamento de tarefas, com relatório mensal das
+> atividades concluídas.
 
-`DISCIPLINA: Projeto - Aplicações Web`
+![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![Arquitetura](https://img.shields.io/badge/arquitetura-mon%C3%B3lito%20modular-blue)
 
-`SEMESTRE: 1º`
+`CURSO: Sistemas de Informação` · `DISCIPLINA: Projeto - Aplicações Web` · `SEMESTRE: 1º`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+---
 
-## Integrantes
+## Sobre o projeto
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
-* Nome completo do aluno 5
+O **FISCRO** é uma aplicação web estática que permite ao usuário gerenciar suas tarefas do
+dia a dia — cadastrar, concluir e remover — e emitir um relatório mensal das tarefas
+concluídas. O objetivo é oferecer uma ferramenta simples e responsiva para organização
+pessoal, sem depender de servidor de banco de dados.
 
+<!-- Ajuste o parágrafo acima conforme a proposta final do grupo (problema, público-alvo e
+     valor entregue). Detalhamento completo em docs/context.md. -->
 
-## Orientador
+## Funcionalidades
 
-* Nome completo do professor 1
+- ✅ Cadastro, conclusão e remoção de tarefas (RF-001)
+- 📊 Relatório mensal de tarefas concluídas (RF-002)
+- 📱 Interface responsiva (RNF-001)
+- 💾 Persistência local no navegador via LocalStorage
 
-# Planejamento
+## Tecnologias
 
-| Etapa         | Atividades |
-|  :----:   | ----------- |
-| ETAPA 1         |[Documentação de Contexto](docs/context.md) <br> [Especificação do Projeto](docs/especification.md) |
-| ETAPA 2         |[Projeto de Interface](docs/interface.md) <br> [Template Padrão](docs/template.md) |
-| ETAPA 3         |[Programação de Funcionalidades - HTML e CSS](docs/development.md) |
-| ETAPA 4        |[Programação de Funcionalidades - Javascript](docs/development.md) <br> [Testes de Software ](docs/tests.md) |
-| ETAPA 5         | [Apresentação](presentation/README.md) |
+- **HTML5** e **CSS3** (design responsivo, mobile-first)
+- **JavaScript** (Vanilla, ES Modules — sem framework nem etapa de build)
+- **LocalStorage** para persistência
 
-# Código
+## Arquitetura
 
-<li><a href="src/README.md"> Código Fonte</a></li>
+A aplicação segue um **monólito modular particionado por domínio**, com decisões
+documentadas em ADRs (*Architecture Decision Records*) no padrão de Richards & Ford, além de
+características de arquitetura e *fitness functions* de governança.
 
-# Apresentação
+📐 **[Documentação de Arquitetura](docs/architecture/README.md)** — ADRs, características e fitness functions.
 
-<li><a href="presentation/README.md"> Apresentação da solução</a></li>
+```
+src/js/
+├── shared/      # transversal: storageService (persistência), httpClient, utils
+└── modules/     # um módulo por domínio
+    ├── tarefas/     # model · service · controller · components
+    └── relatorio/   # service · controller
+```
+
+## Como executar
+
+Como o projeto usa ES Modules, é necessário servi-lo via HTTP (não abrir com `file://`):
+
+```bash
+cd src && python3 -m http.server 8123
+```
+
+Depois, acesse **http://localhost:8123/**. A aplicação também pode ser publicada como site
+estático (ex.: GitHub Pages). Instruções detalhadas em [src/README.md](src/README.md).
+
+## Estrutura do repositório
+
+```
+.
+├── docs/            # documentação do projeto e de arquitetura
+├── help/            # material de apoio da disciplina
+├── presentation/    # apresentação da solução
+├── src/             # código-fonte da aplicação
+└── README.md
+```
+
+## Equipe
+
+**Integrantes**
+
+- Nome completo do aluno 1
+- Nome completo do aluno 2
+- Nome completo do aluno 3
+- Nome completo do aluno 4
+- Nome completo do aluno 5
+
+**Orientador(a)**
+
+- Nome completo do professor(a)
+
+## Planejamento por etapa
+
+| Etapa | Atividades |
+| :---: | :--- |
+| ETAPA 1 | [Documentação de Contexto](docs/context.md) · [Especificação do Projeto](docs/especification.md) |
+| ETAPA 2 | [Projeto de Interface](docs/interface.md) · [Template Padrão](docs/template.md) |
+| ETAPA 3 | [Programação de Funcionalidades — HTML e CSS](docs/development.md) |
+| ETAPA 4 | [Programação de Funcionalidades — JavaScript](docs/development.md) · [Testes de Software](docs/tests.md) |
+| ETAPA 5 | [Apresentação](presentation/README.md) |
+
+## Links úteis
+
+- 💻 [Código-fonte](src/README.md)
+- 📐 [Arquitetura](docs/architecture/README.md)
+- 🎤 [Apresentação da solução](presentation/README.md)

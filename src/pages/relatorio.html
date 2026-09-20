@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relatório — FISCRO</title>
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/layout.css" />
+    <link rel="stylesheet" href="../assets/css/components.css" />
+  </head>
+  <body data-page="relatorio">
+    <header class="app-header">
+      <h1><a href="../index.html">FISCRO</a></h1>
+      <nav class="app-nav">
+        <a href="tarefas.html">Tarefas</a>
+        <a href="relatorio.html" aria-current="page">Relatório</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <h2>Relatório Mensal de Tarefas Concluídas</h2>
+      <div class="field">
+        <label for="report-month">Mês</label>
+        <select id="report-month"></select>
+      </div>
+      <section id="report-output" class="card"></section>
+    </main>
+
+    <footer class="app-footer">
+      <small>PUC Minas — Projeto: Aplicações Web</small>
+    </footer>
+
+    <script type="module" src="../js/main.js"></script>
+  </body>
+</html>
