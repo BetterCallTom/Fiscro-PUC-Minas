@@ -1,0 +1,18 @@
+# CODEOWNERS — ownership por módulo (viabilizado pelo monólito modular, ADR-0003).
+# O GitHub solicita automaticamente a revisão do(s) dono(s) quando arquivos da área mudam.
+# Substitua @usuario-github pelos logins reais de cada integrante.
+
+# Arquitetura e configuração geral — revisão de toda a equipe
+*                               @usuario-lider
+
+# Módulo de Tarefas
+/src/js/modules/tarefas/        @usuario-aluno-a
+
+# Módulo de Relatório
+/src/js/modules/relatorio/      @usuario-aluno-b
+
+# Camada compartilhada (mudanças aqui afetam todos os módulos)
+/src/js/shared/                 @usuario-lider @usuario-aluno-a
+
+# Documentação de arquitetura
+/docs/architecture/             @usuario-lider
