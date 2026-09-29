@@ -1,54 +1,47 @@
 # Introdução
 
-Imagine que você deseja apresentar este projeto para investidores que deverão decidir se investem ou não no desenvolvimento da sua ferramenta.
-
-A **Introdução** consiste das etapas: *Contextualização -- Definição do problema -- Definição dos Objetivos -- Justificativa*, e tem como função situar o seu trabalho dentro de um contexto de mercado e mostrar a importância da sua proposta para resolver a dor de um usuário.
-
-A Contextualização deve situar sem projeto em um determinado contexto de mercado, a fim de fornecer informações adicionais que possam ajudar a entender melhor o assunto que você irá abordar. Serve também para definir a relevância do seu assunto, uma vez que mostra o tamanho do mercado em que se está inserido. Ela pode envolver a análise de vários aspectos, como o ambiente histórico, cultural, político e social em que o problema a ser atacado surgiu.
-
-Escreva de 2 a 3 parágrafos para contetualizar o seu projeto.
+A abertura de um pequeno negócio envolve diversas decisões relacionadas ao mercado, público-alvo, concorrência, custos, investimentos e projeções financeiras. Entretanto, muitos empreendedores iniciam suas atividades sem um planejamento estruturado ou sem recursos para avaliar adequadamente a viabilidade de sua ideia, aumentando os riscos de decisões equivocadas e do encerramento prematuro da empresa.
+Diante desse cenário, surge a necessidade de desenvolver uma plataforma web front-end que auxilie o pequeno empreendedor na organização e análise das principais informações necessárias para a elaboração de um plano de negócios. A plataforma terá como objetivo proporcionar uma interface acessível e intuitiva, permitindo ao usuário estruturar sua ideia, visualizar informações relevantes e obter maior segurança na avaliação inicial da viabilidade do negócio.
 
 ## Problema
 
-Nesse momento você deve apresentar o problema que a sua aplicação deve resolver. No entanto, **não** é a hora de comentar sobre a solução/aplicação.
-
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de fato existir, pois ainda não é a hora de apresentar requisitos detalhados ou projetos.
-
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
-
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+Pequenos empreendedores frequentemente enfrentam dificuldades para estruturar e avaliar a viabilidade de um novo negócio, principalmente pela falta de conhecimento, planejamento adequado e ferramentas tecnológicas de apoio. Essa dificuldade pode resultar em decisões equivocadas e aumentar os riscos de insucesso do empreendimento. Dessa forma, identifica-se a necessidade de uma solução tecnológica que auxilie o empreendedor na elaboração, organização e avaliação de seu plano de negócios, proporcionando maior segurança para a tomada de decisões antes da abertura da empresa. 
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+Objetivo geral:
+Desenvolver uma plataforma web de apoio ao pequeno empreendedor, capaz de auxiliar na organização e avaliação inicial da viabilidade de um novo negócio, por meio da estruturação de informações relevantes para a elaboração de um plano de negócios e do suporte à tomada de decisões.
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+Objetivos específicos
+1.	A partir das informações inseridas pelo usuário no sistema teremos as principais informações necessárias para o objetivo geral proposto . Esses dados se resumem basicamente em qual atividade será desenvolvida a partir da informação do CNAE, o faturamento médio esperado, custo fixo e variável esperados, tempo de retorno de lucro para essas informações e endereço do CNPJ.
+2.	Estruturar o plano de negócio do usuário com base nas informações levantadas no item anterior como entrada no sistema apresentando a ele o tempo para obter lucro e se os dados informados são satisfatórios com seus objetivos. 
+3.	Desenvolver uma interface web intuitiva e de fácil utilização ao usuário de forma que o universo tributário e societário se torne mais claro ao pequeno empresário e o empreendimento fique mais organizado e seguro utilizando as informações que serão inseridas pelo usuário nos itens 1 e 2 acima.
+4.	Disponibilizar uma tela simplificada como resposta da análise feita pelo sistema dos dados obtidos de : Custo Fixo, Variável , Receita Esperada, CNAE, Tributação indicada e se resultado esperado estará ou não dentro da margem de obter lucro e em quanto tempo isso irá ocorrer.
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
+A escolha deste problema justifica-se pela dificuldade enfrentada por pequenos empreendedores no processo de planejamento e avaliação de um novo negócio. A falta de organização das informações, de conhecimento sobre os principais aspectos de um empreendimento e de ferramentas tecnológicas de apoio pode dificultar a tomada de decisões e aumentar os riscos envolvidos na abertura de uma empresa.
+Nesse contexto, o desenvolvimento de uma plataforma web de apoio ao empreendedor apresenta-se como uma alternativa para centralizar e organizar informações relevantes para a elaboração de um plano de negócios, facilitando sua compreensão e permitindo uma avaliação inicial mais estruturada do empreendimento.
+A proposta também se justifica pela aplicação prática dos conhecimentos de Sistemas de Informação, especialmente no desenvolvimento de interfaces web voltadas à solução de um problema real. Dessa forma, a plataforma busca proporcionar ao pequeno empreendedor uma ferramenta acessível e intuitiva que contribua para um planejamento mais organizado e para uma tomada de decisão mais consciente antes da abertura do negócio.
 
-Lembre-se de pesquisar e utilizar números que justifiquem por que é importante que tal problema seja resolvido ou que mostrem o impacto do problema na vida das pessoas.
+O objetivo para a aplicabilidade que será desenvolvida será apresentar no final algo similar ao exemplo abaixo:
+Investimento inicial: R$ 80.000
+Custos fixos: R$ 18.000/mês
+Custos variáveis: 35% do faturamento
+Faturamento projetado: R$ 30.000/mês
+Lucro estimado: R$ 1.500/mês
+Tipo de Tributação: Lucro Real
+Conclusão: Negócio Lucrativo ou não.
 
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
-
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+E então poderia emitir algo como uma mensagem de “ATENÇÃO: o negócio apresenta baixa margem de segurança. Uma redução de aproximadamente 10% no faturamento projetado pode levar o empreendimento ao prejuízo”.
 
 ## Público-Alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações hierárquicas, etc.
+O público-alvo do projeto é composto principalmente por pequenos empreendedores e pessoas que desejam iniciar um novo negócio, mas que possuem dificuldades para estruturar e avaliar sua ideia empresarial. A plataforma será direcionada especialmente a usuários que não possuem conhecimentos aprofundados em planejamento empresarial, gestão financeira ou elaboração de planos de negócios.
 
-Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
+Também poderá atender microempreendedores individuais (MEIs), futuros empresários e pequenos comerciantes ou prestadores de serviços que necessitem de uma ferramenta simples e acessível para organizar informações, analisar aspectos básicos do empreendimento e obter maior segurança no processo de planejamento.
 
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
+Como público secundário, a plataforma poderá ser utilizada por estudantes, profissionais de apoio empresarial e consultores, como ferramenta complementar para organização e apresentação das informações relacionadas a novos negócios.
+
+
+
