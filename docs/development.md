@@ -7,19 +7,19 @@ Abaixo com base nas histórias dos usuários levantados no item anterior enumera
 Requisitos Funcionais
 Abaixo estão listados os requisitos funcionais que são as funções, serviços e comportamentos que o sistema deve oferecer. Prioridades definidas: Alta / Média / Baixa. 
 
-RF 1  - Cadastro de usuário com CPF, nome completo                                        	Alta
-RF 2  - Cadastro do CNAE da atividade (ou CNAEs)                                          	Alta
-RF 3  - Cadastro do Custo Fixo esperado por categoria                                      	Alta
-RF 4  - Cadastro do Custo Variável esperado por categoria                                 	Alta
-RF 5  - Cadastro da Receita Estimada esperada por CNAE                                    	Alta
-RF 6  - Cadastro da faixa de datas para cada Custo Fixo, Estimado e Receita               	Alta
-RF 7  - Cadastro do Endereço de atuação do negócio esperado.                           	    Alta
-RF 8  - Cadastro do capital inicial do negócios                                             Alta
-RF 9  -  Cadastro dos sócios do negócio                                                     Alta
-RF 10 - Cadastro da expectativa de lucro a ser distribuído a cada sócio.             	      Alta
-RF 11 - Cadastro de investimento inicial caso exista além do capital inicial        	      Alta
-RF 12 - Permitir incluir, editar e excluir dados cadastrados                               Média
-RF 13 - Emitir relatório resumido dos dados acima com conclusão da análise     	           Baixa
+RF 1  - Cadastro de usuário com CPF, nome completo                                        	Alta.
+RF 2  - Cadastro do CNAE da atividade (ou CNAEs)                                          	Alta.
+RF 3  - Cadastro do Custo Fixo esperado por categoria                                      	Alta.
+RF 4  - Cadastro do Custo Variável esperado por categoria                                 	Alta.
+RF 5  - Cadastro da Receita Estimada esperada por CNAE                                    	Alta.
+RF 6  - Cadastro da faixa de datas para cada Custo Fixo, Estimado e Receita               	Alta.
+RF 7  - Cadastro do Endereço de atuação do negócio esperado.                           	    Alta.
+RF 8  - Cadastro do capital inicial do negócios                                             Alta.
+RF 9  -  Cadastro dos sócios do negócio                                                     Alta.
+RF 10 - Cadastro da expectativa de lucro a ser distribuído a cada sócio.             	      Alta.
+RF 11 - Cadastro de investimento inicial caso exista além do capital inicial        	      Alta.
+RF 12 - Permitir incluir, editar e excluir dados cadastrados                               Média.
+RF 13 - Emitir relatório resumido dos dados acima com conclusão da análise     	           Baixa.
 
 
 Requisitos não funcionais
