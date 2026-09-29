@@ -1,4 +1,4 @@
-# FISCRO — Gerenciador de Tarefas
+# FISCRO — Sistema de Apoio à Criação e Planejamento Estratégico de Pequenos Negócios
 
 > Aplicação web para registro e acompanhamento de tarefas, com relatório mensal das
 > atividades concluídas.
