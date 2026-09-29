@@ -78,11 +78,11 @@ estático (ex.: GitHub Pages). Instruções detalhadas em [src/README.md](src/RE
 
 **Integrantes**
 
-- Nome completo do aluno 1
-- Nome completo do aluno 2
-- Nome completo do aluno 3
-- Nome completo do aluno 4
-- Nome completo do aluno 5
+- Aluno 1: Peralino Gomes de Moraes Junior 
+- Aluno 2: Renan Maciel Medeiros de Queiroz
+- Aluno 3: Winton Ferreira de Melo Lopes 
+- Aluno 4: Lucas Tadeu dos Santos Ferreira 
+- Aluno 5: Rafael Lana Mascarenhas Diegues
 
 **Orientador(a)**
 
