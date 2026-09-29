@@ -86,7 +86,7 @@ estático (ex.: GitHub Pages). Instruções detalhadas em [src/README.md](src/RE
 
 **Orientador(a)**
 
-- Nome completo do professor(a)
+- Marco Rodrigo Costa
 
 ## Planejamento por etapa
 
