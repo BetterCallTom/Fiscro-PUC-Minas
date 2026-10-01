@@ -168,3 +168,69 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 | R-08 | A estrutura da aplicação deve permitir sua evolução nas etapas seguintes sem reescrever todo o fluxo (antigo RNF-12). |
 | R-09 | O controle de versão deve ser feito neste repositório do GitHub a partir da Etapa 2 (antigo RNF-13). |
 | R-10 | As decisões relevantes do projeto devem ser registradas (antigo RNF-14). |
+
+## Metodologia
+
+A equipe adota uma metodologia ágil baseada no Scrum, adaptada ao formato da disciplina: cinco integrantes que trabalham a distância, com encontros semanais curtos e entregas em etapas de três a quatro semanas. O trabalho é dividido em ciclos curtos, cada um com objetivo e entrega definidos, e as tarefas são acompanhadas em um quadro Kanban.
+
+### Papéis
+
+| Papel | Integrante | Responsabilidade |
+| --- | --- | --- |
+| Product Owner | Prof. Marco Rodrigo Costa | Define o que cada etapa deve entregar, avalia as entregas e orienta as correções. |
+| Coordenação (Scrum Master) | Peralino Gomes de Moraes Junior | Organiza a divisão das tarefas, acompanha os prazos e faz a comunicação com o professor. |
+| Desenvolvimento | Renan Maciel Medeiros de Queiroz | Consolidação da documentação, projeto de interface e template padrão. |
+| Desenvolvimento | Winton Ferreira de Melo Lopes | Arquitetura da solução e estrutura do repositório. |
+| Desenvolvimento | Lucas Tadeu dos Santos Ferreira | Estrutura de armazenamento e critérios de aceitação. |
+| Desenvolvimento | Rafael Lana Mascarenhas Diegues | Rastreabilidade, especificação de requisitos e registro das tarefas. |
+
+Todos os integrantes participam do desenvolvimento das telas a partir da Etapa 3, quando cada um implementa ao menos duas funções JavaScript (restrição R-06).
+
+### Ciclos de trabalho
+
+Cada etapa do projeto corresponde a um ciclo (sprint). O ciclo começa quando o professor apresenta a etapa e termina com a entrega no Canvas e a apresentação no encontro seguinte.
+
+| Ciclo | Período | Entrega |
+| --- | --- | --- |
+| Etapa 1 | 06/08 a 30/08 | Documentação de contexto e especificação do projeto |
+| Etapa 2 | 31/08 a 20/09 | Projeto de interface e template padrão |
+| Etapa 3 | 21/09 a 18/10 | Programação das funcionalidades em HTML e CSS |
+| Etapa 4 | 19/10 a 15/11 | Programação das funcionalidades em JavaScript e testes |
+| Etapa 5 | 16/11 a 29/11 | Apresentação da solução |
+
+Os eventos do Scrum foram adaptados da seguinte forma:
+
+- **Planejamento:** no início de cada ciclo, as tarefas da etapa são definidas a partir do enunciado do Canvas e divididas entre os integrantes, com responsável e prazo registrados no quadro.
+- **Acompanhamento:** feito de forma contínua pelo grupo de mensagens, onde cada integrante informa o que concluiu e os bloqueios encontrados.
+- **Revisão:** o encontro semanal com o professor, às quintas-feiras às 21h30, no Microsoft Teams, onde as entregas são apresentadas e recebem orientação.
+- **Retrospectiva:** após o retorno do professor, a equipe ajusta a forma de trabalho. Na Etapa 2, por exemplo, a orientação de concentrar toda a documentação no GitHub levou à transcrição dos documentos para o repositório e à reorganização do quadro de tarefas.
+
+### Quadro Kanban
+
+As tarefas são controladas no Trello, no quadro **Fiscro - PUC Minas**, organizado em quatr0 listas:
+
+- **A fazer:** tarefas planejadas para o ciclo, ainda não iniciadas;
+- **Em andamento:** tarefas que um integrante assumiu e está executando;
+- **Concluídos:** tarefas finalizadas, com a evidência registrada no cartão.
+- **Cancelado:** taredas canceladas, que não serão mais realizadas
+
+Cada cartão indica o responsável, o prazo, a etapa a que pertence e o tipo de trabalho (documentação ou código). O responsável move o próprio cartão quando inicia e quando conclui a tarefa. Os cartões de código trazem uma checklist com os passos esperados, como estrutura HTML, estilos, responsividade, navegação e documentação.
+
+As tarefas das Etapas 1 e 2 foram registradas no quadro de forma retroativa, a partir do histórico do grupo, e estão identificadas com a etiqueta "Registro retroativo".
+
+Quadro: <https://trello.com/b/2kGz7HRB/fiscro-puc-minas>
+
+### Controle de versão
+
+O código e a documentação ficam neste repositório do GitHub. Antes de enviar alterações, cada integrante atualiza a sua cópia local (`git pull`). As mensagens de commit seguem um prefixo que indica o tipo de mudança, como `docs:` para documentação e `feat:` para funcionalidades. Alterações maiores são feitas em uma branch própria e integradas por pull request, como ocorreu na estruturação da arquitetura (`feat/arquitetura`).
+
+### Ferramentas
+
+| Ferramenta | Uso no projeto |
+| --- | --- |
+| Trello | Quadro Kanban com as tarefas, responsáveis e prazos de cada ciclo. |
+| GitHub | Repositório do código e da documentação, com histórico de alterações de cada integrante. |
+| WhatsApp | Comunicação diária da equipe, divisão de tarefas e acompanhamento dos bloqueios. |
+| Microsoft Teams | Encontros semanais com o professor e canal oficial do grupo na disciplina. |
+| MarvelApp e Figma | Wireframes e protótipo das telas. |
+| Canvas | Enunciados das etapas, materiais de apoio e entrega das tarefas. |
