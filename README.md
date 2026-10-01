@@ -1,7 +1,7 @@
 # FISCRO — Sistema de Apoio à Criação e Planejamento Estratégico de Pequenos Negócios
 
-> Aplicação web para registro e acompanhamento de tarefas, com relatório mensal das
-> atividades concluídas.
+> Aplicação web que ajuda o pequeno empreendedor a organizar a ideia de negócio e a fazer
+> uma avaliação inicial de viabilidade: receita, custos, lucro, ponto de equilíbrio e alertas.
 
 ![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
@@ -15,20 +15,27 @@
 
 ## Sobre o projeto
 
-O **FISCRO** é uma aplicação web estática que permite ao usuário gerenciar suas tarefas do
-dia a dia — cadastrar, concluir e remover — e emitir um relatório mensal das tarefas
-concluídas. O objetivo é oferecer uma ferramenta simples e responsiva para organização
-pessoal, sem depender de servidor de banco de dados.
+Muitos empreendedores abrem um negócio sem um planejamento estruturado: as informações de
+mercado, custos e receitas ficam espalhadas e é difícil saber se a ideia se sustenta. O
+**FISCRO** (de *fisco* + *lucro*) conduz o usuário por etapas curtas — dados do negócio,
+produtos e serviços, dados financeiros — e, ao final, apresenta indicadores de viabilidade
+em linguagem simples, com alertas quando há risco.
 
-<!-- Ajuste o parágrafo acima conforme a proposta final do grupo (problema, público-alvo e
-     valor entregue). Detalhamento completo em docs/context.md. -->
+Os resultados são **estimativas** baseadas nos dados informados. O FISCRO não substitui
+aconselhamento contábil, fiscal ou jurídico. Detalhamento em [docs/context.md](docs/context.md).
 
 ## Funcionalidades
 
-- ✅ Cadastro, conclusão e remoção de tarefas (RF-001)
-- 📊 Relatório mensal de tarefas concluídas (RF-002)
-- 📱 Interface responsiva (RNF-001)
-- 💾 Persistência local no navegador via LocalStorage
+- 👤 Criação de conta e acesso (RF-01, RF-02)
+- 📝 Cadastro do negócio, público-alvo, concorrentes e produtos ou serviços (RF-04 a RF-08)
+- 💰 Registro de investimentos, custos fixos e variáveis e faturamento projetado (RF-09 a RF-12)
+- 🔎 Revisão dos dados antes do cálculo (RF-13)
+- 📊 Cálculo de receita, custo, lucro, ponto de equilíbrio e margem de segurança (RF-15 a RF-19)
+- ⚠️ Alertas explicativos e resumo final (RF-22, RF-23)
+- 💾 Planejamentos salvos para consulta e edição (RF-14, RF-24)
+- 📱 Interface responsiva (RNF-01)
+
+Lista completa de histórias e requisitos em [docs/especification.md](docs/especification.md).
 
 ## Tecnologias
 
@@ -51,6 +58,9 @@ src/js/
     ├── tarefas/     # model · service · controller · components
     └── relatorio/   # service · controller
 ```
+
+> Os módulos `tarefas/` e `relatorio/` são exemplos da estrutura de referência. Eles serão
+> substituídos pelos módulos do FISCRO a partir da Etapa 3, quando começa a implementação das telas.
 
 ## Como executar
 
