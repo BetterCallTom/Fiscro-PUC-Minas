@@ -101,7 +101,7 @@ Os ícones vêm da biblioteca **[Lucide Icons](https://lucide.dev)** (licença I
 
 Os componentes abaixo são reutilizados em todas as telas.
 
-![Componentes do FISCRO](img/componentes.png)
+![Componentes do FISCRO](img/componentestemplate.png)
 
 **Variáveis globais** — definidas uma única vez e usadas por todos os componentes:
 
