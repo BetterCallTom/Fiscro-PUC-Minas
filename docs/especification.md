@@ -31,7 +31,7 @@ Com base nos perfis de usuário, foram identificadas as seguintes histórias, ag
 
 | ID | EU COMO... | QUERO/PRECISO... | PARA... |
 | --- | --- | --- | --- |
-| US-02 | empreendedor | cadastrar o nome, o segmento e a descrição do meu negócio | registrar a identidade do negócio |
+| US-02 | empreendedor | cadastrar o nome, o segmento, a descrição e o endereço do meu negócio | registrar a identidade e a localização do negócio |
 | US-03 | empreendedor | definir o público-alvo do meu negócio | entender para quem vou vender |
 | US-04 | empreendedor | registrar meus concorrentes e meus diferenciais | comparar a minha proposta com o mercado |
 | US-05 | empreendedor | cadastrar meus produtos ou serviços, com preço e volume estimado | estimar as minhas receitas |
@@ -41,7 +41,7 @@ Com base nos perfis de usuário, foram identificadas as seguintes histórias, ag
 | ID | EU COMO... | QUERO/PRECISO... | PARA... |
 | --- | --- | --- | --- |
 | US-06 | empreendedor | registrar os investimentos iniciais | saber quanto capital vou precisar aplicar |
-| US-07 | empreendedor | registrar meus custos fixos e variáveis | entender o peso dos custos no negócio |
+| US-07 | empreendedor | registrar meus custos fixos e variáveis, escolhendo entre categorias conhecidas | entender o peso dos custos no negócio sem esquecer nenhum gasto |
 | US-08 | empreendedor | registrar as receitas projetadas | estimar o faturamento |
 | US-09 | pequeno empresário | editar os dados que já salvei | corrigir informações sem recomeçar o planejamento |
 
@@ -66,12 +66,12 @@ Com base nos perfis de usuário, foram identificadas as seguintes histórias, ag
 | História | Critérios de aceitação principais |
 | --- | --- |
 | US-01 | A conta pode ser criada, o acesso funciona e a sessão pode ser encerrada. Erros são informados sem apagar os dados válidos já digitados. |
-| US-02 | Nome, segmento e descrição podem ser informados, e os campos obrigatórios são validados. |
+| US-02 | Nome, segmento, descrição e endereço podem ser informados, e os campos obrigatórios são validados. O endereço pode ser preenchido a partir do CEP ou digitado manualmente. |
 | US-03 | O público-alvo pode ser registrado, revisado e alterado antes da análise. |
 | US-04 | Concorrentes e diferenciais podem ser registrados e editados. |
 | US-05 | Cada produto ou serviço aceita preço e volume, e entradas inválidas geram mensagem específica. |
 | US-06 | Os investimentos iniciais podem ser registrados e revisados. |
-| US-07 | Custos fixos e variáveis podem ser registrados separadamente. |
+| US-07 | Custos fixos e variáveis podem ser registrados separadamente, escolhendo categorias de uma lista ou incluindo uma categoria própria. |
 | US-08 | As receitas projetadas podem ser informadas e revisadas. |
 | US-09 | Dados salvos podem ser editados sem reiniciar todo o planejamento. |
 | US-10 | Os indicadores aparecem somente quando há dados suficientes e vêm acompanhados de explicação em linguagem simples. |
@@ -117,6 +117,10 @@ As tabelas a seguir apresentam os requisitos funcionais e não funcionais que de
 | RF-26 | O sistema deve apresentar fontes de apoio, como SEBRAE e legislação, para aprofundamento. | US-14, US-15 | MÉDIA |
 | RF-27 | O sistema deve permitir que o usuário encerre sua sessão a partir de qualquer tela interna. | US-01 | MÉDIA |
 | RF-28 | O sistema deve informar, na tela de resultado e no resumo, que os valores apresentados são estimativas. | US-15 | ALTA |
+| RF-29 | O sistema deve permitir que o usuário informe o CEP do negócio e preencher automaticamente rua, bairro, cidade e estado por meio de uma API pública de CEP, aceitando o preenchimento manual quando o CEP não for encontrado. | US-02 | MÉDIA |
+| RF-30 | O sistema deve apresentar listas de categorias de custos fixos (como aluguel, internet e contabilidade) e de custos variáveis (como matéria-prima, embalagens e frete) para o usuário selecionar e informar o valor de cada uma, permitindo também incluir uma categoria própria. | US-07 | MÉDIA |
+
+> Os requisitos RF-29 e RF-30 foram recuperados da versão inicial dos requisitos, elaborada por Peralino Gomes de Moraes Junior (ver [historico/requisitos-versao-inicial.md](historico/requisitos-versao-inicial.md), RF 3, RF 4, RF 7 e RNF 14). As listas completas de categorias de custo estão nesse documento.
 
 ### Requisitos não Funcionais
 
