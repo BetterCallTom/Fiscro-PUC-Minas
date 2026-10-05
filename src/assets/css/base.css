@@ -1,46 +1,18 @@
-/* base.css — reset leve + variáveis de design (tokens) */
-
 :root {
-  --color-bg: #f4f6f8;
-  --color-surface: #ffffff;
-  --color-text: #1f2933;
-  --color-muted: #7b8794;
-  --color-primary: #2563eb;
-  --color-primary-hover: #1d4ed8;
-  --color-danger: #dc2626;
-  --color-border: #e4e7eb;
-  --radius: 8px;
-  --space-1: 0.5rem;
-  --space-2: 1rem;
-  --space-3: 1.5rem;
-  --space-4: 2rem;
-  --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: var(--font);
-  color: var(--color-text);
-  background: var(--color-bg);
-  line-height: 1.5;
-}
-
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-h1,
-h2,
-h3 {
-  line-height: 1.2;
+  --cor-primaria: #0F3D3E;
+  --cor-primaria-hover: #1B5857;
+  --cor-destaque: #D4A017;
+  --cor-destaque-claro: #E8C468;
+  --cor-texto: #1F2937;
+  --cor-texto-sec: #4B5563;
+  --cor-fundo: #FFFFFF;
+  --cor-superficie: #F5F7F6;
+  --cor-borda: #D1D5DB;
+  --cor-sucesso: #15803D;
+  --cor-erro: #DC2626;
+  --cor-erro-texto: #B91C1C;
+  --cor-erro-fundo: #FEF2F2;
+  --fonte-titulo: 'Manrope', system-ui, sans-serif;
+  --fonte-texto: 'Inter', system-ui, sans-serif;
+  --raio: 8px;
 }
