@@ -6,22 +6,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">  <link rel="stylesheet" href="../assets/css/base.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/base.css">
 </head>
 <body>
 <!-- Cabeçalho: logo e menu -->
 <header class="cabecalho">
-  <nav>
+  <a href="meus-planejamentos.html">FISCRO</a>
+  <nav class="menu">
     <a href="meus-planejamentos.html">Meus planejamentos</a>
-    <a href="novo-planejamento.html">Novo planejamento</a>
+    <a class="ativo" href="novo-planejamento.html">Novo planejamento</a>
   </nav>
 </header>
+
 <!-- Conteúdo: título e cartão de dados -->
 <main>
   <h1>Revise antes de calcular</h1>
+  <div class="cartao">
+    <dl>
+      <div class="linha">
+        <dt>Nome do negócio</dt>
+        <dd>Café Ponto Certo</dd>
+      </div>
+      <div class="linha">
+        <dt>Segmento</dt>
+        <dd>Alimentação — cafeteria</dd>
+      </div>
+      <div class="linha">
+        <dt>Produtos e serviços</dt>
+        <dd>3 itens</dd>
+      </div>
+      <div class="linha">
+        <dt>Investimento inicial</dt>
+        <dd>R$ 80.000,00</dd>
+      </div>
+      <div class="linha">
+        <dt>Custos fixos</dt>
+        <dd>R$ 18.000,00/mês</dd>
+      </div>
+      <div class="linha">
+        <dt>Custos variáveis</dt>
+        <dd>35%</dd>
+      </div>
+      <div class="linha">
+        <dt>Faturamento projetado</dt>
+        <dd>campo obrigatório</dd>
+      </div>
+    </dl>
+  </div>
+  <div class="acoes">
+    <button class="btn btn-primario" type="button">Calcular viabilidade</button>
+    <a class="btn btn-secundario" href="novo-planejamento.html">Editar dados</a>
+  </div>
 </main>
+
 <!-- Rodapé: marca, ajuda e fontes -->
 <footer class="rodape">
+  <div class="rodape-colunas">
+    <div>FISCRO</div>
+    <div>
+      <p class="rodape-titulo">AJUDA</p>
+      <a href="../index.html#ajuda">FAQ</a>
+      <a href="../index.html#contato">Contato</a>
+    </div>
+    <div>
+      <p class="rodape-titulo">FONTES</p>
+      <a href="https://www.sebrae.com.br" target="_blank">SEBRAE</a>
+      <a href="https://www.gov.br/anpd" target="_blank">LGPD</a>
+      <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank">WCAG</a>
+    </div>
+  </div>
+  <div class="rodape-creditos">
+    <small>Peralino · Renan · Rafael · Winton · Lucas T.</small>
+    <small>FISCRO — PUC Minas, Eixo 1</small>
+  </div>
 </footer>
 </body>
 </html>
