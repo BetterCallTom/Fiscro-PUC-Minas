@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Acesse sua conta — FISCRO</title>
+    <!-- CSS entra na semana que vem (até 18/10). Quando existir, basta descomentar:
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/layout.css" />
+    <link rel="stylesheet" href="../assets/css/components.css" />
+    -->
+  </head>
+  <body data-page="acesso">
+    <a href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- CABEÇALHO PÚBLICO (Tela 2) -->
+    <header class="site-header">
+      <a href="../Homex.html" class="logo">
+        <strong>FISCRO</strong>
+        <span>Sistema de Apoio à Criação e Planejamento Estratégico de Pequenos Negócios</span>
+      </a>
+      <nav aria-label="Navegação principal">
+        <ul>
+          <li><a href="../Homex.html#ajuda">Ajuda</a></li>
+          <li><a href="../Homex.html#contato">Contato</a></li>
+          <li><a href="#entrar" class="btn btn--primary">Entrar</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="conteudo">
+      <h1>Acesse sua conta</h1>
+      <p>Permite criar conta e entrar no sistema.</p>
+
+      <!-- Abas "Entrar" / "Criar conta".
+           Sem JavaScript não há troca de aba: por enquanto são âncoras para as duas seções.
+           Na Etapa 4 vira um componente de abas. -->
+      <nav aria-label="Entrar ou criar conta">
+        <ul>
+          <li><a href="#entrar" aria-current="true">Entrar</a></li>
+          <li><a href="#criar-conta">Criar conta</a></li>
+        </ul>
+      </nav>
+
+      <!-- RF-02 Autenticação -->
+      <section id="entrar" aria-labelledby="titulo-entrar">
+        <h2 id="titulo-entrar">Entrar</h2>
+        <!-- action temporário: leva à Tela 3 para a demonstração. A autenticação real vem na Etapa 4. -->
+        <form action="negocio.html" method="get">
+          <p>
+            <label for="login-email">Email</label><br />
+            <input
+              type="email"
+              id="login-email"
+              name="email"
+              placeholder="voce@email.com"
+              autocomplete="email"
+              required
+            />
+          </p>
+          <p>
+            <label for="login-senha">Senha</label><br />
+            <input
+              type="password"
+              id="login-senha"
+              name="senha"
+              autocomplete="current-password"
+              required
+            />
+          </p>
+          <p><a href="#recuperar-senha">Esqueci minha senha</a></p>
+          <p><button type="submit">Entrar</button></p>
+        </form>
+      </section>
+
+      <!-- RF-01 Criação de conta -->
+      <section id="criar-conta" aria-labelledby="titulo-criar-conta">
+        <h2 id="titulo-criar-conta">Criar conta</h2>
+        <form action="negocio.html" method="get">
+          <p>
+            <label for="cad-nome">Nome completo</label><br />
+            <input type="text" id="cad-nome" name="nome" autocomplete="name" required />
+          </p>
+          <p>
+            <label for="cad-email">Email</label><br />
+            <input
+              type="email"
+              id="cad-email"
+              name="email"
+              placeholder="voce@email.com"
+              autocomplete="email"
+              required
+            />
+          </p>
+          <p>
+            <label for="cad-senha">Senha</label><br />
+            <input
+              type="password"
+              id="cad-senha"
+              name="senha"
+              minlength="8"
+              autocomplete="new-password"
+              aria-describedby="cad-senha-dica"
+              required
+            />
+            <br /><small id="cad-senha-dica">Mínimo de 8 caracteres.</small>
+          </p>
+          <p>
+            <label for="cad-confirma-senha">Confirmar senha</label><br />
+            <input
+              type="password"
+              id="cad-confirma-senha"
+              name="confirma-senha"
+              minlength="8"
+              autocomplete="new-password"
+              required
+            />
+          </p>
+          <p><button type="submit">Criar conta</button></p>
+        </form>
+      </section>
+      <!-- Recuperação de senha (o wireframe da Tela 2 prevê "inclui recuperação de senha").
+           Sem back-end, o envio de e-mail é só simulado: o formulário recarrega a tela. -->
+      <section id="recuperar-senha" aria-labelledby="titulo-recuperar-senha">
+        <h2 id="titulo-recuperar-senha">Recuperar senha</h2>
+        <form action="acesso.html" method="get">
+          <p>
+            <label for="rec-email">Email cadastrado</label><br />
+            <input
+              type="email"
+              id="rec-email"
+              name="email"
+              placeholder="voce@email.com"
+              autocomplete="email"
+              required
+            />
+          </p>
+          <p><button type="submit">Enviar instruções</button></p>
+        </form>
+      </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="site-footer">
+      <p><strong>FISCRO</strong></p>
+      <div>
+        <h2>Ajuda</h2>
+        <p><a href="../Homex.html#ajuda">FAQ</a> · <a href="../Homex.html#contato">Contato</a></p>
+      </div>
+      <div>
+        <h2>Fontes</h2>
+        <p>
+          <a href="https://www.sebrae.com.br" target="_blank" rel="noopener">SEBRAE</a> ·
+          <a href="https://www.gov.br/anpd" target="_blank" rel="noopener">LGPD</a> ·
+          <a
+            href="https://www.w3.org/WAI/standards-guidelines/wcag/"
+            target="_blank"
+            rel="noopener"
+            >WCAG</a
+          >
+        </p>
+      </div>
+      <p>
+        FISCRO — PUC Minas, Eixo 1<br />
+        Peralino · Renan · Rafael · Winton · Lucas T.
+      </p>
+    </footer>
+  </body>
+</html>

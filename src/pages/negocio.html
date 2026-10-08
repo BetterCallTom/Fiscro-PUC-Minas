@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dados do negócio — FISCRO</title>
+    <!-- CSS entra na semana que vem (até 18/10). Quando existir, basta descomentar:
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/layout.css" />
+    <link rel="stylesheet" href="../assets/css/components.css" />
+    -->
+  </head>
+  <body data-page="negocio">
+    <a href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- CABEÇALHO DAS TELAS INTERNAS (Tela 3) -->
+    <header class="site-header">
+      <a href="../Homex.html" class="logo">
+        <strong>FISCRO</strong>
+        <span>Sistema de Apoio à Criação e Planejamento Estratégico de Pequenos Negócios</span>
+      </a>
+      <nav aria-label="Navegação principal">
+        <ul>
+          <li><a href="#">Meus planejamentos</a></li>
+          <li><a href="negocio.html" aria-current="page">Novo planejamento</a></li>
+          <li>
+            <!-- RF-27 Encerramento da sessão (menu da conta).
+                 <details> abre e fecha sem JavaScript. -->
+            <details>
+              <summary>Minha conta</summary>
+              <ul>
+                <li><a href="acesso.html">Sair</a></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="conteudo">
+      <!-- RF-03 Iniciar planejamento -->
+      <h1>Etapa 1 de 3 — informações gerais</h1>
+      <p>
+        <label for="progresso">Progresso: 25%</label>
+        <progress id="progresso" value="25" max="100">25%</progress>
+      </p>
+
+      <!-- Sem JavaScript, o envio só recarrega a página. A navegação entre etapas e o
+           salvamento em LocalStorage entram na Etapa 4. -->
+      <form action="negocio.html" method="get">
+        <!-- RF-04 Nome, segmento e descrição -->
+        <p>
+          <label for="negocio-nome">Nome do negócio</label><br />
+          <input
+            type="text"
+            id="negocio-nome"
+            name="nome"
+            placeholder="Ex.: Café Ponto Certo"
+            required
+          />
+        </p>
+        <p>
+          <label for="negocio-segmento">Segmento</label><br />
+          <input
+            type="text"
+            id="negocio-segmento"
+            name="segmento"
+            placeholder="Ex.: Alimentação — cafeteria"
+            required
+          />
+        </p>
+        <p>
+          <label for="negocio-descricao">Descrição da ideia</label><br />
+          <textarea
+            id="negocio-descricao"
+            name="descricao"
+            rows="4"
+            cols="50"
+            placeholder="Ex.: Cafeteria de bairro com cafés especiais e lanches rápidos."
+            required
+          ></textarea>
+        </p>
+
+        <!-- RF-05 Público-alvo -->
+        <p>
+          <label for="negocio-publico">Público-alvo</label><br />
+          <input
+            type="text"
+            id="negocio-publico"
+            name="publico-alvo"
+            placeholder="Ex.: Moradores e trabalhadores da região, de 20 a 45 anos"
+            required
+          />
+        </p>
+
+        <!-- RF-06 Concorrentes e diferenciais -->
+        <p>
+          <label for="negocio-concorrentes">Concorrentes e diferenciais</label><br />
+          <input
+            type="text"
+            id="negocio-concorrentes"
+            name="concorrentes"
+            placeholder="Ex.: 2 padarias próximas; diferencial: café especial"
+          />
+        </p>
+
+        <p>
+          <a href="../Homex.html">← Voltar</a>
+          <button type="submit">Continuar →</button>
+        </p>
+      </form>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="site-footer">
+      <p><strong>FISCRO</strong></p>
+      <div>
+        <h2>Ajuda</h2>
+        <p><a href="../Homex.html#ajuda">FAQ</a> · <a href="../Homex.html#contato">Contato</a></p>
+      </div>
+      <div>
+        <h2>Fontes</h2>
+        <p>
+          <a href="https://www.sebrae.com.br" target="_blank" rel="noopener">SEBRAE</a> ·
+          <a href="https://www.gov.br/anpd" target="_blank" rel="noopener">LGPD</a> ·
+          <a
+            href="https://www.w3.org/WAI/standards-guidelines/wcag/"
+            target="_blank"
+            rel="noopener"
+            >WCAG</a
+          >
+        </p>
+      </div>
+      <p>
+        FISCRO — PUC Minas, Eixo 1<br />
+        Peralino · Renan · Rafael · Winton · Lucas T.
+      </p>
+    </footer>
+  </body>
+</html>
