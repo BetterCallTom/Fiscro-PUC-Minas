@@ -1,0 +1,494 @@
+/* acesso.css — estilos da tela. Identidade visual: Homex.html (verde-petróleo, dourado, grafite, Inter).
+   Arquivo único e independente: não depende de base/layout/components. */
+
+/* base.css — reset leve, tokens de design (paleta FISCRO) e tipografia.
+   Fonte da identidade visual: Homex.html (tela 1). Os nomes dos tokens são os mesmos
+   usados lá, para que as telas possam compartilhar este arquivo. */
+
+:root {
+  /* Marca */
+  --verde-petroleo: #0f3d3e;
+  --petroleo-claro: #1b5857;
+  --dourado: #d4a017;
+  --dourado-claro: #e8c468;
+  --grafite: #1f2937;
+
+  /* Apoio */
+  --sucesso: #15803d;
+  --erro: #dc2626;
+  --texto-secundario: #4b5563;
+  --texto-suave: #cfdcdc; /* texto secundário sobre fundo verde-petróleo */
+  --borda: #d1d5db;
+  --superficie: #f5f7f6;
+  --trilho: #e5e7eb;
+  --branco: #ffffff;
+
+  /* Forma e espaçamento */
+  --raio: 8px;
+  --raio-grande: 12px;
+  --largura-max: 1100px;
+  --gutter: 24px;
+
+  --fonte: "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fonte);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--grafite);
+  background: var(--superficie);
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Foco visível para teclado (acessibilidade) */
+:focus-visible {
+  outline: 3px solid var(--dourado);
+  outline-offset: 2px;
+}
+
+/* Link "Pular para o conteúdo": escondido até receber foco */
+a[href="#conteudo"] {
+  position: absolute;
+  left: -9999px;
+  top: 8px;
+}
+a[href="#conteudo"]:focus {
+  left: 16px;
+  z-index: 100;
+  padding: 8px 14px;
+  background: var(--dourado);
+  color: var(--grafite);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--raio);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+/* layout.css — estrutura da página (cabeçalho, conteúdo, rodapé) e responsividade (RNF-01).
+   Mobile-first no sentido de que o comportamento em tela pequena está sempre garantido;
+   os pontos de quebra são os mesmos da Homex: 767px e 1023px. */
+
+/* Rodapé sempre no fim da janela, mesmo com pouco conteúdo */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Largura útil: centraliza o conteúdo em até 1100px sem precisar de wrapper no HTML.
+   A margem lateral cresce junto com a tela e nunca é menor que o gutter. */
+.site-header,
+.site-footer {
+  --lateral: max(var(--gutter), calc((100% - var(--largura-max)) / 2));
+}
+
+/* ========== CABEÇALHO ========== */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px var(--lateral);
+  background: var(--verde-petroleo);
+  color: var(--branco);
+  position: relative;
+}
+
+/* Marca: ícone (logo oficial) + nome + descrição */
+.site-header .logo {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 12px;
+  align-items: center;
+  color: var(--branco);
+  text-decoration: none;
+}
+.site-header .logo::before {
+  content: "";
+  grid-row: 1 / 3;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--raio);
+  background: var(--branco) url("../img/logo-fiscro-icone.png") center / 100% no-repeat;
+}
+.site-header .logo strong {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+}
+.site-header .logo span {
+  font-size: 11px;
+  color: var(--texto-suave);
+}
+
+/* ========== CONTEÚDO ========== */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 40px var(--gutter) 56px;
+}
+
+/* Telas de formulário ficam numa coluna mais estreita */
+body[data-page="acesso"] main {
+  max-width: 520px;
+}
+
+main h1 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--verde-petroleo);
+  margin-bottom: 8px;
+}
+main p {
+  color: var(--texto-secundario);
+}
+
+/* ========== RODAPÉ ========== */
+.site-footer {
+  display: grid;
+  grid-template-columns: 4fr 3fr 3fr;
+  gap: 24px;
+  padding: 32px var(--lateral) 0;
+  background: var(--verde-petroleo);
+  color: var(--branco);
+}
+.site-footer > p:first-child {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--branco);
+}
+.site-footer > p:first-child::before {
+  content: "";
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: var(--branco) url("../img/logo-fiscro-icone.png") center / 100% no-repeat;
+}
+.site-footer h2 {
+  margin-bottom: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--dourado-claro);
+}
+.site-footer div p {
+  font-size: 12px;
+  color: var(--branco);
+}
+.site-footer a {
+  color: var(--branco);
+  font-size: 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.site-footer a:hover {
+  color: var(--dourado-claro);
+  text-decoration: underline;
+}
+/* Linha de créditos: ocupa a largura toda, separada por um filete */
+.site-footer > p:last-child {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 14px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 11px;
+  color: var(--texto-suave);
+}
+
+/* ========== TELAS PEQUENAS E MÉDIAS ========== */
+@media (max-width: 1023px) {
+  /* A descrição longa só cabe no cabeçalho em telas largas */
+  .site-header .logo span {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --gutter: 16px;
+  }
+
+  /* Marca em cima, menu logo abaixo (sem JavaScript, o menu apenas quebra de linha) */
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .site-header .logo strong {
+    font-size: 20px;
+  }
+
+  main {
+    padding: 24px var(--gutter) 40px;
+  }
+  main h1 {
+    font-size: 22px;
+  }
+
+  .site-footer {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* ========== BOTÕES ========== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+  border: 0;
+  border-radius: var(--raio);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+.btn-destaque {
+  background: var(--dourado);
+  color: var(--grafite);
+}
+.btn-destaque:hover {
+  background: var(--dourado-claro);
+}
+.btn-primario {
+  background: var(--verde-petroleo);
+  color: var(--branco);
+}
+.btn-primario:hover {
+  background: var(--petroleo-claro);
+}
+.btn-bloco {
+  width: 100%;
+}
+
+
+/* ========== NAVEGAÇÃO DO CABEÇALHO ========== */
+.site-header nav > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+}
+.site-header nav > ul > li > a:not(.btn) {
+  display: inline-block;
+  padding: 8px 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--branco);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+.site-header nav > ul > li > a:not(.btn):hover {
+  color: var(--dourado-claro);
+}
+.site-header nav a[aria-current="page"] {
+  font-weight: 600;
+  border-bottom-color: var(--dourado);
+}
+
+
+/* ========== CARD DE FORMULÁRIO ========== */
+.card-form {
+  padding: 28px;
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-grande);
+}
+.card-form h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--verde-petroleo);
+}
+
+
+/* ========== CAMPOS DE FORMULÁRIO ==========
+   O HTML usa <p><label/><br/><input/></p> por campo; o <br> some e o label vira bloco. */
+.card-form p {
+  margin-bottom: 18px;
+}
+.card-form br {
+  display: none;
+}
+.card-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--grafite);
+}
+.card-form input,
+.card-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font: inherit;
+  color: var(--grafite);
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+}
+.card-form textarea {
+  min-height: 112px;
+  resize: vertical;
+}
+.card-form ::placeholder {
+  color: #6b7280;
+  opacity: 1;
+}
+.card-form input:focus,
+.card-form textarea:focus {
+  border-color: var(--petroleo-claro);
+}
+/* Só marca erro depois que a pessoa interage com o campo */
+.card-form input:user-invalid,
+.card-form textarea:user-invalid {
+  border-color: var(--erro);
+}
+.card-form small {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--texto-secundario);
+}
+
+/* Links dentro do formulário e do conteúdo */
+main a:not(.btn) {
+  color: var(--petroleo-claro);
+  font-weight: 600;
+}
+main a:not(.btn):hover {
+  color: var(--verde-petroleo);
+  text-decoration: underline;
+}
+.card-form p:last-child {
+  margin-bottom: 0;
+}
+
+.link-aux {
+  margin-top: -6px;
+  font-size: 14px;
+}
+
+/* ========== ABAS (Entrar / Criar conta) ==========
+   Funcionam só com CSS, via :target (clique na aba = âncora da seção).
+   Na Etapa 4 viram um componente de abas com JavaScript. */
+.abas {
+  margin: 24px 0 16px;
+}
+.abas ul {
+  display: flex;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 4px;
+  background: #e4eae8;
+  border-radius: 10px;
+}
+.abas li {
+  flex: 1;
+}
+.abas a {
+  display: block;
+  padding: 10px 12px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--texto-secundario);
+  text-decoration: none;
+  border-radius: var(--raio);
+}
+.abas a:hover {
+  color: var(--verde-petroleo);
+}
+.abas a[aria-current="true"],
+main:has(#criar-conta:target) .abas a[href="#criar-conta"] {
+  background: var(--branco);
+  color: var(--verde-petroleo);
+  box-shadow: 0 1px 3px rgba(15, 61, 62, 0.18);
+}
+/* Quando outra seção está aberta, a aba "Entrar" deixa de parecer ativa */
+main:has(.abas ~ section:not(#entrar):target) .abas a[aria-current="true"] {
+  background: transparent;
+  color: var(--texto-secundario);
+  box-shadow: none;
+}
+
+/* Só uma seção visível por vez: "Entrar" por padrão, as demais via :target */
+.abas ~ section:not(#entrar) {
+  display: none;
+}
+.abas ~ section:not(#entrar):target {
+  display: block;
+}
+main:has(.abas ~ section:not(#entrar):target) #entrar {
+  display: none;
+}
+.abas ~ section {
+  scroll-margin-top: 16px;
+}
+
+
+/* ========== LOGO NA TELA DE ACESSO ========== */
+.logo-marca {
+  display: block;
+  width: 150px;
+  margin: 0 auto 12px;
+}
+body[data-page="acesso"] main > h1,
+body[data-page="acesso"] main > h1 + p {
+  text-align: center;
+}
+
+
+@media (max-width: 767px) {
+  .card-form {
+    padding: 20px;
+  }
+}
