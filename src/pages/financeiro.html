@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dados financeiros — FISCRO</title>
+    <!-- Fontes do guia de estilo: Manrope (títulos) e Inter (texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/fiscro.css" />
+  </head>
+  <body data-page="financeiro">
+    <a href="#conteudo" class="pular-conteudo">Pular para o conteúdo</a>
+
+    <!-- CABEÇALHO DAS TELAS INTERNAS (Tela 5) -->
+    <header class="cabecalho">
+      <a href="../Homex.html" class="marca">
+        <span class="marca-icone" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="#0F3D3E">
+            <rect x="2" y="11" width="4" height="7" rx="1" />
+            <rect x="8" y="7" width="4" height="11" rx="1" />
+            <rect x="14" y="3" width="4" height="15" rx="1" />
+          </svg>
+        </span>
+        <span>
+          <span class="marca-nome">FISCRO</span>
+          <span class="marca-frase">Planejamento estratégico de pequenos negócios</span>
+        </span>
+      </a>
+
+      <nav class="menu" aria-label="Navegação principal">
+        <a href="planejamentos.html">Meus planejamentos</a>
+        <a href="negocio.html" class="ativo">Novo planejamento</a>
+      </nav>
+
+      <!-- RF-27 Encerramento da sessão (menu da conta).
+           <details> abre e fecha sem JavaScript. -->
+      <details class="conta">
+        <summary aria-label="Minha conta">
+          <!-- Lucide: circle-user -->
+          <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" />
+            <circle cx="12" cy="10" r="3" />
+            <path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662" />
+          </svg>
+          <!-- Lucide: chevron-down -->
+          <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </summary>
+        <ul>
+          <li>
+            <a href="acesso.html">
+              <!-- Lucide: log-out -->
+              <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                <polyline points="16 17 21 12 16 7" />
+                <line x1="21" x2="9" y1="12" y2="12" />
+              </svg>
+              Sair
+            </a>
+          </li>
+        </ul>
+      </details>
+    </header>
+
+    <main id="conteudo">
+      <!-- Título da etapa + barra de progresso (66%) -->
+      <div class="etapa">
+        <h1>Etapa 2 de 3 — dados financeiros</h1>
+        <span class="etapa-percentual" aria-hidden="true">66%</span>
+      </div>
+      <div
+        class="progresso"
+        role="progressbar"
+        aria-label="Progresso do planejamento"
+        aria-valuenow="66"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      >
+        <span style="width: 66%"></span>
+      </div>
+
+      <!-- O navegador já valida as regras (min, max, required) antes de enviar.
+           A borda vermelha e a mensagem aparecem pelo CSS (:user-invalid).
+           Salvar no LocalStorage entra na Etapa 4. -->
+      <form action="revisao.html" method="get" class="cartao">
+        <div class="grade grade-2">
+          <!-- RF-09 Investimentos iniciais -->
+          <div class="campo">
+            <label for="fin-investimento">Investimento inicial (R$)</label>
+            <input
+              type="number"
+              id="fin-investimento"
+              name="investimento"
+              min="0.01"
+              step="0.01"
+              inputmode="decimal"
+              placeholder="Ex.: 80000,00"
+              aria-describedby="erro-investimento"
+            />
+            <!-- RF-21 Mensagem de erro específica do campo -->
+            <p class="mensagem-erro" id="erro-investimento">
+              <!-- Lucide: triangle-alert -->
+              <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" />
+                <path d="M12 9v4" />
+                <path d="M12 17h.01" />
+              </svg>
+              Informe um valor maior que zero.
+            </p>
+          </div>
+
+          <!-- RF-10 Custos fixos -->
+          <div class="campo">
+            <label for="fin-custos-fixos">Custos fixos por mês (R$)</label>
+            <input
+              type="number"
+              id="fin-custos-fixos"
+              name="custos-fixos"
+              min="0"
+              step="0.01"
+              inputmode="decimal"
+              placeholder="Ex.: 18000,00"
+              aria-describedby="erro-custos-fixos"
+            />
+            <p class="mensagem-erro" id="erro-custos-fixos">
+              <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" />
+                <path d="M12 9v4" />
+                <path d="M12 17h.01" />
+              </svg>
+              O valor não pode ser negativo.
+            </p>
+          </div>
+
+          <!-- RF-11 Custos variáveis (percentual sobre o faturamento) -->
+          <div class="campo">
+            <label for="fin-custos-variaveis">Custos variáveis (%)</label>
+            <input
+              type="number"
+              id="fin-custos-variaveis"
+              name="custos-variaveis"
+              min="0"
+              max="100"
+              step="0.1"
+              inputmode="decimal"
+              placeholder="Ex.: 35"
+              aria-describedby="erro-custos-variaveis"
+            />
+            <p class="mensagem-erro" id="erro-custos-variaveis">
+              <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" />
+                <path d="M12 9v4" />
+                <path d="M12 17h.01" />
+              </svg>
+              O percentual deve ficar entre 0% e 100%.
+            </p>
+          </div>
+
+          <!-- RF-12 Faturamento projetado (único obrigatório, como no protótipo) -->
+          <div class="campo">
+            <label for="fin-faturamento">Faturamento projetado por mês (R$)</label>
+            <input
+              type="number"
+              id="fin-faturamento"
+              name="faturamento"
+              min="0.01"
+              step="0.01"
+              inputmode="decimal"
+              placeholder="Ex.: 45000,00"
+              aria-describedby="erro-faturamento"
+              required
+            />
+            <p class="mensagem-erro" id="erro-faturamento">
+              <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" />
+                <path d="M12 9v4" />
+                <path d="M12 17h.01" />
+              </svg>
+              Este campo é obrigatório e deve ser maior que zero.
+            </p>
+          </div>
+        </div>
+
+        <p class="dica">Não sabe um número exato? Deixe em branco. Só o faturamento é obrigatório.</p>
+
+        <div class="acoes">
+          <a href="produtos.html" class="btn btn-secundario">
+            <!-- Lucide: arrow-left -->
+            <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m12 19-7-7 7-7" />
+              <path d="M19 12H5" />
+            </svg>
+            Voltar
+          </a>
+          <button type="submit" class="btn btn-primario">
+            Revisar dados
+            <!-- Lucide: arrow-right -->
+            <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </form>
+    </main>
+
+    <!-- RODAPÉ (mesma estrutura da Revisão, do Renan) -->
+    <footer class="rodape">
+      <div class="rodape-colunas">
+        <div class="rodape-marca">
+          <span class="marca-icone" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="#0F3D3E">
+              <rect x="2" y="11" width="4" height="7" rx="1" />
+              <rect x="8" y="7" width="4" height="11" rx="1" />
+              <rect x="14" y="3" width="4" height="15" rx="1" />
+            </svg>
+          </span>
+          FISCRO
+        </div>
+        <div>
+          <p class="rodape-titulo">Ajuda</p>
+          <a href="../Homex.html#ajuda">FAQ</a>
+          <a href="../Homex.html#contato">Contato</a>
+        </div>
+        <div>
+          <p class="rodape-titulo">Fontes</p>
+          <a href="https://www.sebrae.com.br" target="_blank" rel="noopener">SEBRAE</a>
+          <a href="https://www.gov.br/anpd" target="_blank" rel="noopener">LGPD</a>
+          <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noopener">WCAG</a>
+        </div>
+      </div>
+      <div class="rodape-creditos">
+        <small>FISCRO — PUC Minas, Eixo 1</small>
+        <small>Peralino · Renan · Rafael · Winton · Lucas T.</small>
+      </div>
+    </footer>
+  </body>
+</html>
