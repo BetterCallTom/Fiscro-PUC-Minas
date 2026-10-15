@@ -1,0 +1,747 @@
+/* fiscro.css — identidade visual do FISCRO
+   Fonte do design: docs/template.md e docs/FISCRO-Template.pdf (Renan, Etapa 2).
+
+   Organização do arquivo:
+   1. Variáveis (cores, fontes, raio)
+   2. Base (reset e elementos soltos)
+   3. Estrutura: cabeçalho, conteúdo e rodapé
+   4. Componentes: etapa e progresso, cartão, campos, botões, ações
+   5. Componentes de outras telas (lista da Revisão)
+   6. Responsivo: tablet (768px) e desktop (1024px)
+
+   Mobile-first: as regras soltas valem para o celular; os @media no fim
+   acrescentam colunas e espaço conforme a tela cresce. */
+
+/* ========== 1. VARIÁVEIS ========== */
+/* Mesmos valores do base.css da branch do Renan. Mudou a cor aqui, muda no site todo. */
+:root {
+  --cor-primaria: #0f3d3e;
+  --cor-primaria-hover: #1b5857;
+  --cor-destaque: #d4a017;
+  --cor-destaque-claro: #e8c468;
+  --cor-texto: #1f2937;
+  --cor-texto-sec: #4b5563;
+  --cor-fundo: #ffffff;
+  --cor-superficie: #f5f7f6;
+  --cor-borda: #d1d5db;
+  --cor-sucesso: #15803d;
+  --cor-erro: #dc2626;
+  --cor-erro-texto: #b91c1c;
+  --cor-erro-fundo: #fef2f2;
+  --cor-rodape-texto: #b7c9c7;
+  --fonte-titulo: 'Manrope', system-ui, sans-serif;
+  --fonte-texto: 'Inter', system-ui, sans-serif;
+  --raio: 8px;
+}
+
+/* ========== 2. BASE ========== */
+/* box-sizing: a largura passa a incluir padding e borda (conta mais fácil). */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* O body vira uma coluna flex: cabeçalho, main e rodapé um embaixo do outro.
+   Com min-height de 100vh e o main crescendo (flex: 1), o rodapé fica sempre no pé da tela. */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--fonte-texto);
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: var(--cor-texto);
+  background: var(--cor-superficie);
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-family: var(--fonte-titulo);
+  color: var(--cor-primaria);
+}
+
+h1 {
+  font-size: 21px;
+  line-height: 1.3;
+}
+
+a {
+  color: var(--cor-primaria);
+}
+
+/* Ícones Lucide: herdam a cor do texto (stroke="currentColor" no SVG). */
+.icone {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
+/* Contorno de foco visível para quem navega pelo teclado (RNF-06). */
+:focus-visible {
+  outline: 2px solid var(--cor-destaque);
+  outline-offset: 2px;
+}
+
+/* Link "Pular para o conteúdo": fica fora da tela e só aparece quando recebe foco (Tab). */
+.pular-conteudo {
+  position: absolute;
+  left: -9999px;
+}
+
+.pular-conteudo:focus {
+  left: 16px;
+  top: 16px;
+  z-index: 100;
+  padding: 8px 16px;
+  background: #fff;
+  border-radius: var(--raio);
+}
+
+/* Some da tela, mas o leitor de tela continua lendo.
+   Usado nos títulos <h2> das seções da tela 2, que na tela já são as abas. */
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ========== 3. ESTRUTURA ========== */
+
+/* --- Cabeçalho --- */
+/* No celular: logo e conta na 1ª linha, menu na 2ª (flex-wrap deixa quebrar a linha). */
+.cabecalho {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+  min-height: 60px;
+  padding: 10px 16px;
+  background: var(--cor-primaria);
+  color: #fff;
+}
+
+/* Qualquer link solto no cabeçalho fica branco (o verde padrão sumiria no fundo verde). */
+.cabecalho a {
+  color: #fff;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.marca-icone {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: var(--cor-destaque);
+}
+
+.marca-nome {
+  display: block;
+  font-family: var(--fonte-titulo);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+}
+
+/* A frase de apoio só aparece no desktop (ver seção 6). */
+.marca-frase {
+  display: none;
+  font-size: 11px;
+  color: var(--cor-rodape-texto);
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+  order: 3; /* joga o menu para depois da conta, ou seja, para a 2ª linha */
+  width: 100%;
+}
+
+.menu a {
+  padding: 6px 0;
+  border-bottom: 2px solid transparent; /* borda invisível: o texto não "pula" quando ela aparece */
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  color: var(--cor-destaque-claro);
+}
+
+/* Item da seção atual: sublinhado dourado. */
+.menu a.ativo {
+  border-bottom-color: var(--cor-destaque);
+  color: var(--cor-destaque-claro);
+}
+
+/* Botão "Entrar" dentro do menu do cabeçalho público (tela 2 e Home).
+   O seletor .menu a.btn-destaque é mais específico que .menu a, então vence. */
+.menu a.btn-destaque {
+  height: 36px;
+  padding: 0 16px;
+  border: 0;
+  color: var(--cor-texto);
+}
+
+.menu a.btn-destaque:hover {
+  background: var(--cor-destaque-claro);
+}
+
+/* --- Menu da conta (RF-27) --- */
+/* <details> abre e fecha sozinho, sem JavaScript. O <summary> é o botão. */
+.conta {
+  position: relative; /* referência para a caixinha que abre embaixo */
+}
+
+.conta summary {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: var(--raio);
+  cursor: pointer;
+  list-style: none; /* tira o triângulo padrão do <details> */
+}
+
+.conta summary::-webkit-details-marker {
+  display: none; /* idem, no Safari */
+}
+
+.conta ul {
+  position: absolute; /* sai do fluxo e flutua sobre a página */
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 10;
+  min-width: 150px;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  background: #fff;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  box-shadow: 0 8px 24px rgba(15, 61, 62, 0.15);
+}
+
+.conta ul a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: var(--cor-texto);
+  text-decoration: none;
+}
+
+.conta ul a:hover {
+  background: var(--cor-superficie);
+}
+
+/* --- Conteúdo --- */
+/* flex: 1 faz o main ocupar o espaço que sobra (empurra o rodapé para baixo).
+   max-width + margin auto centraliza um bloco de até 1024px. */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+/* --- Rodapé --- */
+.rodape {
+  padding: 32px 16px 16px;
+  background: var(--cor-primaria);
+  color: var(--cor-rodape-texto);
+  font-size: 13px;
+}
+
+.rodape-colunas {
+  display: grid;
+  grid-template-columns: 1fr; /* celular: uma coluna */
+  gap: 24px;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.rodape-titulo {
+  margin: 0 0 6px;
+  color: var(--cor-destaque-claro);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.rodape a {
+  color: var(--cor-rodape-texto);
+  text-decoration: none;
+}
+
+.rodape a:hover {
+  color: #fff;
+}
+
+/* Põe o " · " entre links vizinhos sem precisar escrever no HTML.
+   a + a = "um link que vem logo depois de outro link". */
+.rodape-colunas a + a::before {
+  content: ' · ';
+  color: var(--cor-rodape-texto);
+}
+
+.rodape-marca {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.rodape-marca .marca-icone {
+  width: 24px;
+  height: 24px;
+  border-radius: 5px;
+}
+
+.rodape-creditos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  max-width: 1024px;
+  margin: 24px auto 0;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 11.5px;
+}
+
+/* ========== 4. COMPONENTES ========== */
+
+/* --- Título da etapa + barra de progresso --- */
+.etapa {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.etapa h1 {
+  font-size: 17px;
+}
+
+.etapa-percentual {
+  color: var(--cor-texto-sec);
+  font-size: 12.5px;
+}
+
+/* Trilho cinza; o <span> de dentro é a parte preenchida (a largura vem do HTML). */
+.progresso {
+  height: 8px;
+  margin-bottom: 24px;
+  border-radius: 999px; /* 999px = ponta totalmente arredondada */
+  background: #e3e8e7;
+  overflow: hidden;
+}
+
+.progresso > span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--cor-destaque);
+}
+
+/* --- Cartão --- */
+.cartao {
+  margin: 0;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+}
+
+/* <legend> por padrão fica "em cima" da borda do <fieldset>.
+   float: left a puxa para dentro do cartão; o próximo elemento usa clear para descer. */
+.item-titulo {
+  float: left;
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 0;
+  color: var(--cor-texto-sec);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.item-titulo + * {
+  clear: both;
+}
+
+/* --- Grade de campos --- */
+/* Celular: 1 coluna. A seção 6 passa para 2 colunas a partir de 768px. */
+.grade {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* --- Campos (label + input + mensagem de erro) --- */
+.campo label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13.5px;
+  font-weight: 500;
+}
+
+.campo input,
+.campo textarea {
+  width: 100%;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  background: #fff;
+  color: var(--cor-texto);
+  font: inherit; /* input não herda a fonte sozinho */
+  font-size: 15px;
+}
+
+/* textarea (caixa de texto de várias linhas, tela 3): altura livre e só estica para baixo. */
+.campo textarea {
+  height: auto;
+  min-height: 88px;
+  padding: 10px 12px;
+  resize: vertical;
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+  color: #9ca3af;
+}
+
+/* Dica fixa embaixo do campo (ex.: "Mínimo de 8 caracteres."). */
+.campo-dica {
+  display: block;
+  margin-top: 6px;
+  color: var(--cor-texto-sec);
+  font-size: 12.5px;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  outline: 2px solid var(--cor-primaria);
+  outline-offset: 2px;
+}
+
+/* Erro (RF-21). Dois jeitos de ligar:
+   - .campo.erro → o JavaScript da Etapa 4 põe a classe "erro" no campo;
+   - :user-invalid → o próprio navegador marca o input depois que a pessoa mexeu nele
+     e o valor quebrou uma regra do HTML (required, min, max). Já funciona sem JS. */
+.campo.erro input,
+.campo input:user-invalid,
+.campo textarea:user-invalid {
+  border: 2px solid var(--cor-erro);
+}
+
+.mensagem-erro {
+  display: none; /* escondida até haver erro */
+  align-items: center;
+  gap: 6px;
+  margin: 6px 0 0;
+  color: var(--cor-erro-texto);
+  font-size: 12.5px;
+}
+
+.mensagem-erro .icone {
+  width: 14px;
+  height: 14px;
+}
+
+/* :has() = "o .campo que TEM dentro um input inválido" → mostra a mensagem dele. */
+.campo.erro .mensagem-erro,
+.campo:has(input:user-invalid) .mensagem-erro {
+  display: flex;
+}
+
+.dica {
+  margin: 16px 0 0;
+  color: var(--cor-texto-sec);
+  font-size: 12.5px;
+}
+
+/* --- Botões (classes do template.md) --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 20px;
+  border: 1.5px solid transparent;
+  border-radius: var(--raio);
+  font: inherit;
+  font-size: 14.5px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-primario {
+  background: var(--cor-primaria);
+  color: #fff;
+}
+
+.btn-primario:hover {
+  background: var(--cor-primaria-hover);
+}
+
+.btn-secundario {
+  background: #fff;
+  color: var(--cor-primaria);
+  border-color: var(--cor-primaria);
+}
+
+.btn-secundario:hover {
+  background: var(--cor-superficie);
+}
+
+.btn-destaque {
+  background: var(--cor-destaque);
+  color: var(--cor-texto);
+}
+
+.btn-perigo {
+  background: #fff;
+  color: var(--cor-erro-texto);
+  border-color: var(--cor-erro);
+}
+
+/* "Adicionar outro item": largura toda e borda tracejada. */
+.btn-tracejado {
+  width: 100%;
+  margin-top: 16px;
+  background: #fff;
+  color: var(--cor-primaria);
+  border: 1.5px dashed var(--cor-primaria);
+}
+
+.btn-tracejado:hover {
+  background: var(--cor-superficie);
+}
+
+/* --- Linha de ações (Voltar / Continuar) --- */
+/* Celular: botões empilhados e com largura toda. O principal sobe para o topo com order: -1,
+   seja qual for a ordem no HTML. */
+.acoes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--cor-borda);
+}
+
+.acoes .btn {
+  width: 100%;
+}
+
+.acoes .btn-primario {
+  order: -1;
+}
+
+/* Botão com a largura toda (Entrar, Criar conta). */
+.btn-bloco {
+  width: 100%;
+}
+
+/* ========== 5. COMPONENTES DE OUTRAS TELAS ========== */
+
+/* --- Tela 2 (Acesso, Lucas): cartão estreito, centralizado --- */
+.cartao-acesso {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.cartao-acesso h1 {
+  text-align: center;
+}
+
+.link-direita {
+  margin: -4px 0 0;
+  text-align: right;
+  font-size: 13px;
+}
+
+.painel-titulo {
+  margin-bottom: 12px;
+  font-size: 17px;
+}
+
+/* Abas (classe .tabs do template.md). */
+.tabs {
+  display: flex;
+  margin: 20px 0 24px;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.tabs a {
+  flex: 1; /* as duas abas dividem a largura igualmente */
+  margin-bottom: -1px; /* a linha dourada fica por cima da linha cinza */
+  padding: 10px 0;
+  border-bottom: 2px solid transparent;
+  color: var(--cor-texto-sec);
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Troca de aba só com CSS, usando o #endereco da URL:
+   :target = a seção cujo id está no endereço (ex.: acesso.html#criar-conta).
+   1) toda seção começa escondida;
+   2) a seção do endereço aparece;
+   3) se o endereço não tem # de nenhuma seção, mostra o Entrar. */
+.painel {
+  display: none;
+}
+
+.painel:target,
+.cartao-acesso:not(:has(.painel:target)) #entrar {
+  display: block;
+}
+
+/* Aba ativa, seguindo a mesma lógica. */
+.cartao-acesso:not(:has(.painel:target)) .tabs a[href='#entrar'],
+.cartao-acesso:has(#entrar:target) .tabs a[href='#entrar'],
+.cartao-acesso:has(#criar-conta:target) .tabs a[href='#criar-conta'] {
+  border-bottom-color: var(--cor-destaque);
+  color: var(--cor-texto);
+  font-weight: 600;
+}
+
+/* --- Tela 6 (Revisão, Renan) --- */
+/* Lista <dl> com rótulo à esquerda e valor à direita. */
+.cartao dl {
+  margin: 0;
+}
+
+.linha {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.linha:last-child {
+  border-bottom: none;
+}
+
+.linha dt {
+  color: var(--cor-texto-sec);
+}
+
+.linha dd {
+  margin: 0;
+  font-weight: 600;
+  text-align: right;
+}
+
+main > h1 + .cartao {
+  margin-top: 16px;
+}
+
+/* ========== 6. RESPONSIVO ========== */
+
+/* Tablet em diante (768px ou mais) */
+@media (min-width: 768px) {
+  /* Menu volta para a mesma linha do logo, encostado à direita. */
+  .menu {
+    order: 0;
+    width: auto;
+    margin-left: auto;
+  }
+
+  main {
+    padding: 32px 24px 56px;
+  }
+
+  /* Duas colunas de campos; .campo-inteiro ocupa a linha toda (da 1ª à última coluna). */
+  .grade-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .campo-inteiro {
+    grid-column: 1 / -1;
+  }
+
+  /* Botões lado a lado: secundário à esquerda, principal à direita. */
+  .acoes {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .acoes .btn {
+    width: auto;
+  }
+
+  .acoes .btn-primario {
+    order: 2;
+  }
+
+  .rodape-colunas {
+    grid-template-columns: 1.4fr 1fr 1fr;
+  }
+}
+
+/* Desktop (1024px ou mais) */
+@media (min-width: 1024px) {
+  .cabecalho {
+    min-height: 76px;
+    padding: 0 32px;
+  }
+
+  .marca-frase {
+    display: block;
+  }
+
+  main {
+    padding: 40px 40px 64px;
+  }
+
+  h1 {
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  .etapa h1 {
+    font-size: 19px;
+  }
+
+  .cartao {
+    padding: 24px;
+  }
+
+  .rodape {
+    padding: 40px 40px 20px;
+  }
+}
