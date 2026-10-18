@@ -301,14 +301,6 @@ main p {
 .btn-primario:hover {
   background: var(--petroleo-claro);
 }
-.btn-secundario {
-  background: var(--branco);
-  color: var(--verde-petroleo);
-  border: 1px solid var(--verde-petroleo);
-}
-.btn-secundario:hover {
-  background: #f4f6f5;
-}
 
 
 /* ========== NAVEGAÇÃO DO CABEÇALHO ========== */
