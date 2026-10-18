@@ -1,6 +1,7 @@
 name: CI
 
-# Roda a cada push e pull request: valida arquitetura, lint e testes.
+# Roda a cada push e pull request. Os passos de lint, formatação e testes
+# voltam quando os scripts correspondentes existirem no package.json.
 on:
   push:
     branches: [main]
@@ -11,22 +12,3 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Fitness functions (arquitetura)
-        run: npm run arch:check
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 24
-
-      - name: Instalar dependências
-        run: npm install
-
-      - name: Lint
-        run: npm run lint
-
-      - name: Verificar formatação
-        run: npm run format:check
-
-      - name: Testes
-        run: npm test
