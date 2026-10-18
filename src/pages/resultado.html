@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resultado — FISCRO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/fiscro.css" />
+  </head>
+  <body data-page="resultado">
+    <a href="#conteudo" class="pular-conteudo">Pular para o conteúdo</a>
+
+    <header class="cabecalho">
+      <a href="../Homex.html" class="marca">
+        <span class="marca-icone" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="#0F3D3E">
+            <rect x="2" y="11" width="4" height="7" rx="1" />
+            <rect x="8" y="7" width="4" height="11" rx="1" />
+            <rect x="14" y="3" width="4" height="15" rx="1" />
+          </svg>
+        </span>
+        <span>
+          <span class="marca-nome">FISCRO</span>
+          <span class="marca-frase">Planejamento estratégico de pequenos negócios</span>
+        </span>
+      </a>
+
+      <nav class="menu" aria-label="Navegação principal">
+        <a href="planejamentos.html">Meus planejamentos</a>
+        <a href="negocio.html" class="ativo">Novo planejamento</a>
+      </nav>
+
+      <!-- RF-27 -->
+      <details class="conta">
+        <summary aria-label="Minha conta">
+          <!-- Lucide: circle-user -->
+          <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" />
+            <circle cx="12" cy="10" r="3" />
+            <path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662" />
+          </svg>
+          <!-- Lucide: chevron-down -->
+          <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </summary>
+        <ul>
+          <li>
+            <a href="acesso.html">
+              <!-- Lucide: log-out -->
+              <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                <polyline points="16 17 21 12 16 7" />
+                <line x1="21" x2="9" y1="12" y2="12" />
+              </svg>
+              Sair
+            </a>
+          </li>
+        </ul>
+      </details>
+    </header>
+
+    <main id="conteudo">
+      <h1>Resumo do planejamento</h1>
+
+      <!-- RF-23 -->
+      <section class="grade grade-indicadores" aria-label="Indicadores de viabilidade">
+        <!-- RF-15 -->
+        <div class="cartao">
+          <h2 class="indicador-titulo">Receita estimada</h2>
+          <p class="indicador-valor">R$ 30.000</p>
+          <p class="indicador-legenda">por mês</p>
+        </div>
+
+        <!-- RF-16 -->
+        <div class="cartao">
+          <h2 class="indicador-titulo">Custo estimado</h2>
+          <p class="indicador-valor">R$ 28.500</p>
+          <p class="indicador-legenda">por mês</p>
+        </div>
+
+        <!-- RF-17 -->
+        <div class="cartao indicador-destaque">
+          <h2 class="indicador-titulo">Lucro estimado</h2>
+          <p class="indicador-valor">R$ 1.500</p>
+          <p class="indicador-legenda">por mês</p>
+        </div>
+
+        <!-- RF-18, RF-25 -->
+        <div class="cartao">
+          <div class="indicador-topo">
+            <h2 class="indicador-titulo">Ponto de equilíbrio</h2>
+            <!-- Lucide: circle-help -->
+            <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+              <path d="M12 17h.01" />
+            </svg>
+          </div>
+          <p class="indicador-valor">R$ 27.692</p>
+          <p class="indicador-legenda">faturamento mínimo/mês</p>
+        </div>
+
+        <!-- RF-19, RF-22, RNF-05 -->
+        <div class="cartao">
+          <div class="indicador-topo">
+            <h2 class="indicador-titulo">Margem de segurança</h2>
+            <!-- Lucide: circle-help -->
+            <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+              <path d="M12 17h.01" />
+            </svg>
+          </div>
+          <p class="indicador-valor">7,7%</p>
+          <p class="indicador-legenda indicador-risco">
+            <!-- Lucide: triangle-alert -->
+            <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" />
+              <path d="M12 9v4" />
+              <path d="M12 17h.01" />
+            </svg>
+            abaixo do recomendado
+          </p>
+        </div>
+
+        <div class="cartao">
+          <h2 class="indicador-titulo">Retorno do investimento</h2>
+          <p class="indicador-valor">≈ 54 meses</p>
+          <p class="indicador-legenda">4 anos e 6 meses</p>
+        </div>
+      </section>
+
+      <!-- RF-25 -->
+      <details class="cartao explicacao" open>
+        <summary>
+          <!-- Lucide: circle-help -->
+          <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+            <path d="M12 17h.01" />
+          </svg>
+          O que é margem de segurança?
+          <!-- Lucide: chevron-down -->
+          <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </summary>
+        <p>Quanto o faturamento pode cair antes de o negócio começar a ter prejuízo.</p>
+      </details>
+
+      <!-- RF-22, RNF-05 -->
+      <div class="alerta">
+        <!-- Lucide: triangle-alert -->
+        <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" />
+          <path d="M12 9v4" />
+          <path d="M12 17h.01" />
+        </svg>
+        <p>Atenção: margem de segurança baixa. Uma queda de 10% no faturamento pode levar ao prejuízo.</p>
+      </div>
+
+      <!-- RF-28, RNF-11 -->
+      <p class="dica">
+        <!-- Lucide: info -->
+        <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 16v-4" />
+          <path d="M12 8h.01" />
+        </svg>
+        Estimativas — não substituem análise contábil.
+      </p>
+
+      <div class="acoes">
+        <a href="negocio.html" class="btn btn-secundario">
+          <!-- Lucide: pencil -->
+          <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" />
+            <path d="m15 5 4 4" />
+          </svg>
+          Editar dados
+        </a>
+        <a href="planejamentos.html" class="btn btn-primario">
+          <!-- Lucide: save -->
+          <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
+            <path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7" />
+            <path d="M7 3v4a1 1 0 0 0 1 1h7" />
+          </svg>
+          Salvar planejamento
+        </a>
+      </div>
+    </main>
+
+    <footer class="rodape">
+      <div class="rodape-colunas">
+        <div class="rodape-marca">
+          <span class="marca-icone" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="#0F3D3E">
+              <rect x="2" y="11" width="4" height="7" rx="1" />
+              <rect x="8" y="7" width="4" height="11" rx="1" />
+              <rect x="14" y="3" width="4" height="15" rx="1" />
+            </svg>
+          </span>
+          FISCRO
+        </div>
+        <div>
+          <p class="rodape-titulo">Ajuda</p>
+          <a href="../Homex.html#ajuda">FAQ</a>
+          <a href="../Homex.html#contato">Contato</a>
+        </div>
+        <div>
+          <p class="rodape-titulo">Fontes</p>
+          <a href="https://www.sebrae.com.br" target="_blank" rel="noopener">SEBRAE</a>
+          <a href="https://www.gov.br/anpd" target="_blank" rel="noopener">LGPD</a>
+          <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noopener">WCAG</a>
+        </div>
+      </div>
+      <div class="rodape-creditos">
+        <small>FISCRO — PUC Minas, Eixo 1</small>
+        <small>Peralino · Renan · Rafael · Winton · Lucas T.</small>
+      </div>
+    </footer>
+  </body>
+</html>
