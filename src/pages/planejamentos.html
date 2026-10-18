@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meus planejamentos — FISCRO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/fiscro.css" />
+    <style>
+      .lista-planejamentos {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 24px;
+      }
+      .item-planejamento {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 16px 20px;
+        background: #fff;
+        border: 1px solid var(--cor-borda);
+        border-radius: var(--raio);
+        text-decoration: none;
+        color: var(--cor-texto);
+        transition: border-color 0.15s, box-shadow 0.15s;
+      }
+
+      .item-planejamento:hover {
+        border-color: var(--cor-primaria);
+        box-shadow: 0 2px 8px rgba(15, 61, 62, 0.08);
+      }
+
+      .item-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        min-width: 0;
+      }
+
+      .item-nome {
+        font-family: var(--fonte-titulo);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--cor-primaria);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .item-meta {
+        font-size: 12.5px;
+        color: var(--cor-texto-sec);
+      }
+
+      .item-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding: 3px 10px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 600;
+        white-space: nowrap;
+        flex: none;
+      }
+
+      .item-badge.viavel {
+        background: #dcfce7;
+        color: var(--cor-sucesso);
+      }
+
+      .item-badge.inviavel {
+        background: var(--cor-erro-fundo);
+        color: var(--cor-erro-texto);
+      }
+
+      .item-seta {
+        color: var(--cor-texto-sec);
+        flex: none;
+      }
+
+      .vazio {
+        text-align: center;
+        padding: 48px 24px;
+        background: #fff;
+        border: 1px dashed var(--cor-borda);
+        border-radius: var(--raio);
+        color: var(--cor-texto-sec);
+      }
+
+      .vazio p {
+        margin: 8px 0 0;
+        font-size: 14px;
+      }
+
+      .acoes-lista {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 24px;
+      }
+    </style>
+  </head>
+  <body data-page="planejamentos">
+    <a href="#conteudo" class="pular-conteudo">Pular para o conteúdo</a>
+
+    <header class="cabecalho">
+      <a href="../Homex.html" class="marca">
+        <span class="marca-icone" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="#0F3D3E">
+            <rect x="2" y="11" width="4" height="7" rx="1" />
+            <rect x="8" y="7" width="4" height="11" rx="1" />
+            <rect x="14" y="3" width="4" height="15" rx="1" />
+          </svg>
+        </span>
+        <span>
+          <span class="marca-nome">FISCRO</span>
+          <span class="marca-frase">Planejamento estratégico de pequenos negócios</span>
+        </span>
+      </a>
+
+      <nav class="menu" aria-label="Navegação principal">
+        <a href="planejamentos.html" class="ativo">Meus planejamentos</a>
+        <a href="negocio.html">Novo planejamento</a>
+      </nav>
+
+      <details class="conta">
+        <summary aria-label="Minha conta">
+          <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" />
+            <circle cx="12" cy="10" r="3" />
+            <path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662" />
+          </svg>
+          <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </summary>
+        <ul>
+          <li>
+            <a href="acesso.html">
+              <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                <polyline points="16 17 21 12 16 7" />
+                <line x1="21" x2="9" y1="12" y2="12" />
+              </svg>
+              Sair
+            </a>
+          </li>
+        </ul>
+      </details>
+    </header>
+
+    <main id="conteudo">
+      <h1>Meus planejamentos</h1>
+
+      <div id="lista-container">
+        <div class="lista-planejamentos" id="lista"></div>
+      </div>
+
+      <div class="acoes-lista">
+        <a href="negocio.html" class="btn btn-primario">
+          <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14" />
+            <path d="M12 5v14" />
+          </svg>
+          Novo planejamento
+        </a>
+      </div>
+    </main>
+
+    <footer class="rodape">
+      <div class="rodape-colunas">
+        <div class="rodape-marca">
+          <span class="marca-icone" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="#0F3D3E">
+              <rect x="2" y="11" width="4" height="7" rx="1" />
+              <rect x="8" y="7" width="4" height="11" rx="1" />
+              <rect x="14" y="3" width="4" height="15" rx="1" />
+            </svg>
+          </span>
+          FISCRO
+        </div>
+        <div>
+          <p class="rodape-titulo">Ajuda</p>
+          <a href="../Homex.html#ajuda">FAQ</a>
+          <a href="../Homex.html#contato">Contato</a>
+        </div>
+        <div>
+          <p class="rodape-titulo">Fontes</p>
+          <a href="https://www.sebrae.com.br" target="_blank" rel="noopener">SEBRAE</a>
+          <a href="https://www.gov.br/anpd" target="_blank" rel="noopener">LGPD</a>
+          <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noopener">WCAG</a>
+        </div>
+      </div>
+      <div class="rodape-creditos">
+        <small>FISCRO — PUC Minas, Eixo 1</small>
+        <small>Peralino · Renan · Rafael · Winton · Lucas T.</small>
+      </div>
+    </footer>
+
+    <script type="module">
+      import { planningService } from "../js/modules/planejamentos/planning.service.js";
+
+      function formatarData(iso) {
+        return new Date(iso).toLocaleDateString("pt-BR", {
+          day: "2-digit",
+          month: "short",
+          year: "numeric",
+        });
+      }
+
+      function formatarMoeda(valor) {
+        return valor.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+      }
+
+      async function renderizar() {
+        const lista = document.getElementById("lista");
+        const plans = await planningService.list();
+
+        if (plans.length === 0) {
+          lista.innerHTML = `
+            <div class="vazio">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--cor-borda);" aria-hidden="true">
+                <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/>
+                <polyline points="13 2 13 9 20 9"/>
+              </svg>
+              <p>Você ainda não tem planejamentos salvos.</p>
+            </div>`;
+          return;
+        }
+
+        lista.innerHTML = plans.map(p => {
+          const badge = p.resultado.viavel
+            ? `<span class="item-badge viavel">Viável</span>`
+            : `<span class="item-badge inviavel">Rever dados</span>`;
+
+          return `
+            <a class="item-planejamento" href="detalhe-planejamento.html?id=${p.id}" aria-label="Abrir planejamento ${p.nome}">
+              <div class="item-info">
+                <span class="item-nome">${p.nome}</span>
+                <span class="item-meta">Salvo em ${formatarData(p.criadoEm)} · Faturamento ${formatarMoeda(p.financeiro.faturamento)}</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:12px; flex:none;">
+                ${badge}
+                <svg class="icone item-seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m9 18 6-6-6-6"/>
+                </svg>
+              </div>
+            </a>`;
+        }).join("");
+      }
+
+      renderizar();
+      planningService.onExternalChange(renderizar);
+    </script>
+  </body>
+</html>

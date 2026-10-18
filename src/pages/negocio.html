@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dados do negócio — FISCRO</title>
+    <!-- Fontes do guia de estilo: Manrope (títulos) e Inter (texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/fiscro.css" />
+    <link rel="stylesheet" href="../assets/css/negocio.css" />
+  </head>
+  <body data-page="negocio">
+    <a href="#conteudo" class="pular-conteudo">Pular para o conteúdo</a>
+
+    <!-- CABEÇALHO DAS TELAS INTERNAS (Tela 3) -->
+    <header class="cabecalho">
+      <a href="../Homex.html" class="marca">
+        <span class="marca-icone" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="#0F3D3E">
+            <rect x="2" y="11" width="4" height="7" rx="1" />
+            <rect x="8" y="7" width="4" height="11" rx="1" />
+            <rect x="14" y="3" width="4" height="15" rx="1" />
+          </svg>
+        </span>
+        <span>
+          <span class="marca-nome">FISCRO</span>
+          <span class="marca-frase">Planejamento estratégico de pequenos negócios</span>
+        </span>
+      </a>
+
+      <nav class="menu" aria-label="Navegação principal">
+        <a href="planejamentos.html">Meus planejamentos</a>
+        <a href="negocio.html" class="ativo" aria-current="page">Novo planejamento</a>
+      </nav>
+
+      <!-- RF-27 Encerramento da sessão (menu da conta).
+           <details> abre e fecha sem JavaScript. -->
+      <details class="conta">
+        <summary aria-label="Minha conta">
+          <!-- Lucide: circle-user -->
+          <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" />
+            <circle cx="12" cy="10" r="3" />
+            <path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662" />
+          </svg>
+          <!-- Lucide: chevron-down -->
+          <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </summary>
+        <ul>
+          <li>
+            <a href="acesso.html">
+              <!-- Lucide: log-out -->
+              <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                <polyline points="16 17 21 12 16 7" />
+                <line x1="21" x2="9" y1="12" y2="12" />
+              </svg>
+              Sair
+            </a>
+          </li>
+        </ul>
+      </details>
+    </header>
+
+    <main id="conteudo">
+      <!-- RF-03 Iniciar planejamento -->
+      <div class="etapa">
+        <h1>Etapa 1 de 3 — informações gerais</h1>
+        <span class="etapa-percentual" aria-hidden="true">25%</span>
+      </div>
+      <div
+        class="progresso"
+        role="progressbar"
+        aria-label="Progresso do planejamento"
+        aria-valuenow="25"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      >
+        <span style="width: 25%"></span>
+      </div>
+
+      <!-- Sem JavaScript, o envio só leva para a próxima tela. A navegação entre etapas e o
+           salvamento em LocalStorage entram na Etapa 4. -->
+      <form action="produtos.html" method="get" class="cartao">
+        <div class="grade grade-2">
+          <!-- RF-04 Nome, segmento e descrição -->
+          <div class="campo">
+            <label for="negocio-nome">Nome do negócio</label>
+            <input
+              type="text"
+              id="negocio-nome"
+              name="nome"
+              placeholder="Ex.: Café Ponto Certo"
+              required
+            />
+          </div>
+          <div class="campo">
+            <label for="negocio-segmento">Segmento</label>
+            <input
+              type="text"
+              id="negocio-segmento"
+              name="segmento"
+              placeholder="Ex.: Alimentação — cafeteria"
+              required
+            />
+          </div>
+          <div class="campo campo-inteiro">
+            <label for="negocio-descricao">Descrição da ideia</label>
+            <textarea
+              id="negocio-descricao"
+              name="descricao"
+              rows="3"
+              placeholder="Ex.: Cafeteria de bairro com cafés especiais e lanches rápidos."
+              required
+            ></textarea>
+          </div>
+
+          <!-- RF-05 Público-alvo -->
+          <div class="campo campo-inteiro">
+            <label for="negocio-publico">Público-alvo</label>
+            <input
+              type="text"
+              id="negocio-publico"
+              name="publico-alvo"
+              placeholder="Ex.: Moradores e trabalhadores da região, de 20 a 45 anos"
+              required
+            />
+          </div>
+
+          <!-- RF-06 Concorrentes e diferenciais -->
+          <div class="campo campo-inteiro">
+            <label for="negocio-concorrentes">Concorrentes e diferenciais</label>
+            <input
+              type="text"
+              id="negocio-concorrentes"
+              name="concorrentes"
+              placeholder="Ex.: 2 padarias próximas; diferencial: café especial"
+            />
+          </div>
+        </div>
+
+        <div class="acoes">
+          <a href="../Homex.html" class="btn btn-secundario">
+            <!-- Lucide: arrow-left -->
+            <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m12 19-7-7 7-7" />
+              <path d="M19 12H5" />
+            </svg>
+            Voltar
+          </a>
+          <button type="submit" class="btn btn-primario">
+            Continuar
+            <!-- Lucide: arrow-right -->
+            <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </form>
+    </main>
+
+    <!-- RODAPÉ (mesmo de todas as telas) -->
+    <footer class="rodape">
+      <div class="rodape-colunas">
+        <div class="rodape-marca">
+          <span class="marca-icone" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="#0F3D3E">
+              <rect x="2" y="11" width="4" height="7" rx="1" />
+              <rect x="8" y="7" width="4" height="11" rx="1" />
+              <rect x="14" y="3" width="4" height="15" rx="1" />
+            </svg>
+          </span>
+          FISCRO
+        </div>
+        <div>
+          <p class="rodape-titulo">Ajuda</p>
+          <a href="../Homex.html#ajuda">FAQ</a>
+          <a href="../Homex.html#contato">Contato</a>
+        </div>
+        <div>
+          <p class="rodape-titulo">Fontes</p>
+          <a href="https://www.sebrae.com.br" target="_blank" rel="noopener">SEBRAE</a>
+          <a href="https://www.gov.br/anpd" target="_blank" rel="noopener">LGPD</a>
+          <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noopener">WCAG</a>
+        </div>
+      </div>
+      <div class="rodape-creditos">
+        <small>FISCRO — PUC Minas, Eixo 1</small>
+        <small>Peralino · Renan · Rafael · Winton · Lucas T.</small>
+      </div>
+    </footer>
+  </body>
+</html>
