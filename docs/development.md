@@ -117,7 +117,7 @@ Primeira das três etapas do planejamento ("Etapa 1 de 3 — informações gerai
 Navegação:
 - "Continuar" leva à tela 4 (`produtos.html`).
 - "Voltar" leva à Home.
-- "Meus planejamentos" aponta para `planejamentos.html` (tela 8), que ainda não está no repositório.
+- "Meus planejamentos" aponta para `planejamentos.html` (tela 8).
 - O menu da conta traz "Sair", que leva de volta à tela 2.
 
 ### Descrição das estruturas
@@ -156,4 +156,92 @@ As duas páginas também abrem direto no navegador, dando duplo clique no arquiv
 
 - Os formulários usam `method="get"` e `action` temporário, apenas para navegar entre as telas na demonstração. Nenhum dado é gravado. Na Etapa 4 o tratamento passa a ser feito em JavaScript, sem enviar senha pela URL.
 - Recuperação de senha é simulada: o formulário apenas recarrega a tela, pois não há servidor.
-- O link "Meus planejamentos" depende da tela 8, que ainda não existe no repositório.
+- O link "Meus planejamentos" leva à tela 8 (`planejamentos.html`), que ainda não lista planejamentos reais.
+
+---
+
+## Telas 6 e 7 — Revisão e Resultado
+
+**Etapa:** 3 — Programação de Funcionalidades (HTML e CSS)
+**Situação:** interface das duas telas concluída em HTML e CSS. Os valores exibidos são de exemplo (negócio "Café Ponto Certo"): a leitura dos dados informados, o cálculo dos indicadores e o salvamento são da Etapa 4, em JavaScript.
+
+### Requisitos atendidos
+
+| ID | Descrição do Requisito | Artefato Criado | Como a tela atende |
+|----|------------------------|-----------------|--------------------|
+| RF-20 | Identificar e apontar os campos obrigatórios que não foram preenchidos | `src/pages/revisao.html` | A linha "Faturamento projetado" aparece com a mensagem "Este campo é obrigatório e deve ser maior que zero." e ícone de alerta |
+| RF-23 | Exibir um resumo final com os dados do negócio, os indicadores calculados e os alertas | `src/pages/resultado.html` | Seis cartões de indicador, explicação de termo e alerta de risco em uma única tela |
+| RF-15 | Calcular a receita estimada | `src/pages/resultado.html` | Cartão "Receita estimada" (R$ 30.000, por mês) |
+| RF-16 | Calcular o custo estimado | `src/pages/resultado.html` | Cartão "Custo estimado" (R$ 28.500, por mês) |
+| RF-17 | Calcular o lucro estimado | `src/pages/resultado.html` | Cartão "Lucro estimado" (R$ 1.500, por mês), com faixa dourada |
+| RF-18 | Calcular o ponto de equilíbrio | `src/pages/resultado.html` | Cartão "Ponto de equilíbrio" (R$ 27.692, faturamento mínimo/mês) |
+| RF-19 | Calcular a margem de segurança | `src/pages/resultado.html` | Cartão "Margem de segurança" (7,7%) |
+| RF-22 | Exibir alertas explicativos quando os indicadores apontarem risco | `src/pages/resultado.html` | Alerta "Atenção: margem de segurança baixa. Uma queda de 10% no faturamento pode levar ao prejuízo." |
+| RF-25 | Explicar em linguagem simples os termos e indicadores | `src/pages/resultado.html` | Bloco recolhível "O que é margem de segurança?", que explica o termo. Os ícones de ajuda nos cartões de ponto de equilíbrio e margem são apenas decorativos nesta etapa |
+| RF-27 | Permitir que o usuário encerre sua sessão a partir de qualquer tela interna | `revisao.html` e `resultado.html` (menu da conta, item "Sair") | Menu pronto. O encerramento real fica para a Etapa 4 |
+| RF-28 | Informar que os valores são estimativas | `src/pages/resultado.html` | Aviso "Estimativas — não substituem análise contábil." |
+
+| ID | Requisito não funcional | Como foi atendido |
+|----|-------------------------|-------------------|
+| RNF-01 | Interface responsiva | A grade de indicadores tem 1 coluna até 767 px, 2 colunas de 768 px a 1023 px e 3 colunas a partir de 1024 px |
+| RNF-05 | Informações de risco com texto, além da cor | A margem baixa usa ícone de alerta, o texto "abaixo do recomendado" e a cor vermelha. O alerta traz ícone, texto e cor |
+| RNF-06 | Fluxo executável pelo teclado | Link "Pular para o conteúdo", ações feitas com links nativos, acessíveis por Tab, explicação em `<details>` e contorno de foco visível |
+| RNF-11 | Resultados deixam clara a natureza de estimativa | Título dos cartões com "estimada/estimado" e aviso de estimativa no fim da tela |
+| RNF-15 | Consistência visual entre as telas | Cabeçalho, rodapé, cartões e botões iguais aos das demais telas internas, via `fiscro.css` |
+
+### Artefatos criados
+
+| Arquivo | Função |
+|---------|--------|
+| `src/pages/revisao.html` | Tela 6: lista dos dados informados, com o campo obrigatório ausente sinalizado |
+| `src/pages/resultado.html` | Tela 7: resumo do planejamento com os indicadores calculados |
+| `src/assets/css/fiscro.css` | Acréscimo do bloco "Tela 7 (Resultado, Renan)" na seção 5, com a grade de indicadores, o bloco recolhível e o alerta |
+
+### Tela 6 — Revisão (`revisao.html`)
+
+Lista em `<dl>` com rótulo à esquerda e valor à direita. Só a linha "Faturamento projetado" está em erro.
+
+| Dado exibido | Tipo | Unidade | Exemplo |
+|--------------|------|---------|---------|
+| Nome do negócio | Texto | — | Café Ponto Certo |
+| Segmento | Texto | — | Alimentação — cafeteria |
+| Produtos e serviços | Número inteiro | itens | 3 itens |
+| Investimento inicial | Número decimal | R$ | R$ 80.000,00 |
+| Custos fixos | Número decimal | R$ por mês | R$ 18.000,00/mês |
+| Custos variáveis | Número decimal | % do faturamento | 35% |
+| Faturamento projetado | Número decimal (obrigatório) | R$ por mês | (vazio, com mensagem de erro) |
+
+Navegação:
+- "Editar dados" leva à tela 3 (`negocio.html`).
+- "Calcular viabilidade" leva à tela 7 (`resultado.html`).
+
+### Tela 7 — Resultado (`resultado.html`)
+
+| Dado exibido | Tipo | Unidade | Exemplo |
+|--------------|------|---------|---------|
+| Receita estimada | Número decimal | R$ por mês | R$ 30.000 |
+| Custo estimado | Número decimal | R$ por mês | R$ 28.500 |
+| Lucro estimado | Número decimal | R$ por mês | R$ 1.500 |
+| Ponto de equilíbrio | Número decimal | R$ de faturamento mínimo por mês | R$ 27.692 |
+| Margem de segurança | Número decimal | % | 7,7% (abaixo do recomendado) |
+| Retorno do investimento | Número inteiro | meses | ≈ 54 meses (4 anos e 6 meses) |
+
+Navegação:
+- "Editar dados" leva à tela 3 (`negocio.html`).
+- "Salvar planejamento" leva à tela 8 (`planejamentos.html`). O salvamento real é da Etapa 4.
+
+### Como verificar
+
+1. Abra um terminal na pasta do projeto e rode:
+   ```bash
+   cd src && python -m http.server 8123
+   ```
+2. Percorra o fluxo a partir de `http://localhost:8123/pages/negocio.html`: negócio → produtos → financeiro → revisão → resultado.
+3. Na revisão, confira os sete dados e a mensagem de erro em "Faturamento projetado". Clique em "Calcular viabilidade".
+4. No resultado, confira os seis cartões, o alerta de margem baixa, o aviso de estimativa e os botões "Editar dados" e "Salvar planejamento".
+5. Reduza a largura da janela: a grade de indicadores passa de 3 para 2 e depois para 1 coluna.
+6. Use só o teclado (Tab): o foco aparece em cada link e botão, e o bloco "O que é margem de segurança?" abre e fecha com Enter.
+
+Os formulários das telas anteriores enviam os dados por `method="get"` apenas para navegar entre as telas. A revisão e o resultado ainda não leem esses dados.
+
+Link publicado: (preencher)
