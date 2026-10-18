@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Detalhe do planejamento — FISCRO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/fiscro.css" />
+    <style>
+      .breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13px;
+        color: var(--cor-texto-sec);
+        margin-bottom: 20px;
+      }
+
+      .breadcrumb a {
+        color: var(--cor-texto-sec);
+        text-decoration: none;
+      }
+
+      .breadcrumb a:hover {
+        color: var(--cor-primaria);
+        text-decoration: underline;
+      }
+
+      .cartao-cabecalho {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        padding: 20px 24px;
+        background: #fff;
+        border: 1px solid var(--cor-borda);
+        border-radius: var(--raio);
+        margin-bottom: 24px;
+      }
+
+      .cartao-cabecalho h2 {
+        margin: 0 0 4px;
+        font-size: 19px;
+      }
+
+      .cartao-cabecalho .subtitulo {
+        font-size: 13px;
+        color: var(--cor-texto-sec);
+        margin: 0;
+      }
+
+      .acoes-cartao {
+        display: flex;
+        gap: 8px;
+        flex: none;
+      }
+
+      .grade-indicadores {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+
+      .indicador {
+        background: #fff;
+        border: 1px solid var(--cor-borda);
+        border-radius: var(--raio);
+        padding: 20px;
+      }
+
+      .indicador-rotulo {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12.5px;
+        font-weight: 600;
+        color: var(--cor-texto-sec);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 8px;
+      }
+
+      .indicador-valor {
+        font-family: var(--fonte-titulo);
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--cor-primaria);
+        line-height: 1.2;
+      }
+
+      .indicador-valor.sucesso { color: var(--cor-sucesso); }
+      .indicador-valor.erro    { color: var(--cor-erro-texto); }
+
+      .indicador-desc {
+        margin-top: 4px;
+        font-size: 12.5px;
+        color: var(--cor-texto-sec);
+      }
+
+      .alerta-resultado {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 14px 16px;
+        border-radius: var(--raio);
+        margin-bottom: 24px;
+        font-size: 14px;
+      }
+
+      .alerta-resultado.viavel {
+        background: #f0fdf4;
+        border: 1px solid #86efac;
+        border-left: 4px solid var(--cor-sucesso);
+        color: #166534;
+      }
+
+      .alerta-resultado.inviavel {
+        background: var(--cor-erro-fundo);
+        border: 1px solid var(--cor-erro);
+        border-left: 4px solid var(--cor-erro);
+        color: var(--cor-erro-texto);
+      }
+
+      .acoes {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      @media (min-width: 640px) {
+        .grade-indicadores {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .grade-indicadores {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body data-page="detalhe-planejamento">
+    <a href="#conteudo" class="pular-conteudo">Pular para o conteúdo</a>
+
+    <header class="cabecalho">
+      <a href="../Homex.html" class="marca">
+        <span class="marca-icone" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="#0F3D3E">
+            <rect x="2" y="11" width="4" height="7" rx="1" />
+            <rect x="8" y="7" width="4" height="11" rx="1" />
+            <rect x="14" y="3" width="4" height="15" rx="1" />
+          </svg>
+        </span>
+        <span>
+          <span class="marca-nome">FISCRO</span>
+          <span class="marca-frase">Planejamento estratégico de pequenos negócios</span>
+        </span>
+      </a>
+
+      <nav class="menu" aria-label="Navegação principal">
+        <a href="planejamentos.html" class="ativo">Meus planejamentos</a>
+        <a href="negocio.html">Novo planejamento</a>
+      </nav>
+
+      <details class="conta">
+        <summary aria-label="Minha conta">
+          <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" />
+            <circle cx="12" cy="10" r="3" />
+            <path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662" />
+          </svg>
+          <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </summary>
+        <ul>
+          <li>
+            <a href="acesso.html">
+              <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                <polyline points="16 17 21 12 16 7" />
+                <line x1="21" x2="9" y1="12" y2="12" />
+              </svg>
+              Sair
+            </a>
+          </li>
+        </ul>
+      </details>
+    </header>
+
+    <main id="conteudo">
+      <nav class="breadcrumb" aria-label="Caminho">
+        <a href="planejamentos.html">Meus planejamentos</a>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m9 18 6-6-6-6"/>
+        </svg>
+        <span id="breadcrumb-nome">—</span>
+      </nav>
+
+      <div class="cartao-cabecalho" id="cabecalho-plano">
+        <div>
+          <h2 id="plano-nome">Carregando…</h2>
+          <p class="subtitulo" id="plano-data"></p>
+        </div>
+        <div class="acoes-cartao">
+          <button class="btn btn-secundario" id="btn-editar" aria-label="Editar planejamento">
+            <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
+              <path d="m15 5 4 4"/>
+            </svg>
+            Editar
+          </button>
+          <button class="btn btn-perigo" id="btn-excluir" aria-label="Excluir planejamento">
+            <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 6h18"/>
+              <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/>
+              <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>
+              <line x1="10" x2="10" y1="11" y2="17"/>
+              <line x1="14" x2="14" y1="11" y2="17"/>
+            </svg>
+            Excluir
+          </button>
+        </div>
+      </div>
+
+      <div id="alerta-resultado" class="alerta-resultado" role="alert" aria-live="polite" style="display:none;"></div>
+
+      <div class="grade-indicadores" id="grade-indicadores"></div>
+
+      <div class="acoes">
+        <a href="planejamentos.html" class="btn btn-secundario">
+          <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m12 19-7-7 7-7"/>
+            <path d="M19 12H5"/>
+          </svg>
+          Voltar
+        </a>
+        <a href="negocio.html" class="btn btn-primario">
+          <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14"/>
+            <path d="M12 5v14"/>
+          </svg>
+          Novo planejamento
+        </a>
+      </div>
+    </main>
+
+    <footer class="rodape">
+      <div class="rodape-colunas">
+        <div class="rodape-marca">
+          <span class="marca-icone" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="#0F3D3E">
+              <rect x="2" y="11" width="4" height="7" rx="1" />
+              <rect x="8" y="7" width="4" height="11" rx="1" />
+              <rect x="14" y="3" width="4" height="15" rx="1" />
+            </svg>
+          </span>
+          FISCRO
+        </div>
+        <div>
+          <p class="rodape-titulo">Ajuda</p>
+          <a href="../Homex.html#ajuda">FAQ</a>
+          <a href="../Homex.html#contato">Contato</a>
+        </div>
+        <div>
+          <p class="rodape-titulo">Fontes</p>
+          <a href="https://www.sebrae.com.br" target="_blank" rel="noopener">SEBRAE</a>
+          <a href="https://www.gov.br/anpd" target="_blank" rel="noopener">LGPD</a>
+          <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noopener">WCAG</a>
+        </div>
+      </div>
+      <div class="rodape-creditos">
+        <small>FISCRO — PUC Minas, Eixo 1</small>
+        <small>Peralino · Renan · Rafael · Winton · Lucas T.</small>
+      </div>
+    </footer>
+
+    <script type="module">
+      import { planningService } from "../js/modules/planejamentos/planning.service.js";
+
+      function formatarMoeda(valor) {
+        return valor.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+      }
+
+      function formatarPerc(valor) {
+        return valor.toFixed(2).replace(".", ",") + "%";
+      }
+
+      function formatarData(iso) {
+        return new Date(iso).toLocaleDateString("pt-BR", {
+          day: "2-digit",
+          month: "long",
+          year: "numeric",
+        });
+      }
+
+      function iconeInfo() {
+        return `<svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>`;
+      }
+
+      function renderIndicadores(resultado, financeiro) {
+        const grade = document.getElementById("grade-indicadores");
+
+        const paybackTexto = resultado.payback !== null
+          ? `${resultado.payback.toFixed(1)} mes${resultado.payback !== 1 ? "es" : ""}`
+          : "—";
+
+        const roiTexto = resultado.roi !== null
+          ? formatarPerc(resultado.roi) + " / mês"
+          : "—";
+
+        const peTexto = resultado.pontoEquilibrio !== null
+          ? formatarMoeda(resultado.pontoEquilibrio)
+          : "—";
+
+        const indicadores = [
+          {
+            rotulo: "Lucro mensal estimado",
+            valor: formatarMoeda(resultado.lucroMensal),
+            classe: resultado.lucroMensal >= 0 ? "sucesso" : "erro",
+            desc: "Faturamento menos custos fixos e variáveis",
+          },
+          {
+            rotulo: "Margem de contribuição",
+            valor: formatarPerc(resultado.margemContribuicao),
+            classe: resultado.margemContribuicao > 0 ? "sucesso" : "erro",
+            desc: "Percentual do faturamento que cobre os custos fixos",
+          },
+          {
+            rotulo: "Ponto de equilíbrio",
+            valor: peTexto,
+            classe: "",
+            desc: "Faturamento mínimo para cobrir todos os custos",
+          },
+          {
+            rotulo: "Payback",
+            valor: paybackTexto,
+            classe: "",
+            desc: "Tempo estimado para recuperar o investimento inicial",
+          },
+          {
+            rotulo: "ROI mensal",
+            valor: roiTexto,
+            classe: resultado.roi !== null && resultado.roi >= 0 ? "sucesso" : "erro",
+            desc: "Retorno sobre o investimento por mês",
+          },
+          {
+            rotulo: "Faturamento projetado",
+            valor: formatarMoeda(financeiro.faturamento),
+            classe: "",
+            desc: "Valor informado na etapa de dados financeiros",
+          },
+        ];
+
+        grade.innerHTML = indicadores.map(ind => `
+          <div class="indicador">
+            <div class="indicador-rotulo">
+              ${iconeInfo()}
+              ${ind.rotulo}
+            </div>
+            <div class="indicador-valor ${ind.classe}">${ind.valor}</div>
+            <p class="indicador-desc">${ind.desc}</p>
+          </div>
+        `).join("");
+      }
+
+      async function carregar() {
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get("id");
+
+        if (!id) {
+          window.location.href = "planejamentos.html";
+          return;
+        }
+
+        const plano = await planningService.getById(id);
+
+        if (!plano) {
+          document.getElementById("plano-nome").textContent = "Planejamento não encontrado.";
+          return;
+        }
+
+        document.title = `${plano.nome} — FISCRO`;
+        document.getElementById("breadcrumb-nome").textContent = plano.nome;
+        document.getElementById("plano-nome").textContent = plano.nome;
+        document.getElementById("plano-data").textContent =
+          `Salvo em ${formatarData(plano.criadoEm)}`;
+
+        const alerta = document.getElementById("alerta-resultado");
+        if (plano.resultado.viavel) {
+          alerta.className = "alerta-resultado viavel";
+          alerta.innerHTML = `
+            <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:1px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+            <span><strong>Negócio viável.</strong> Com base nos dados informados, o empreendimento cobre seus custos e gera lucro.</span>`;
+        } else {
+          alerta.className = "alerta-resultado inviavel";
+          alerta.innerHTML = `
+            <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:1px;"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+            <span><strong>Atenção:</strong> com os números atuais, o negócio não cobre todos os custos. Revise os dados e tente novamente.</span>`;
+        }
+        alerta.style.display = "flex";
+
+        renderIndicadores(plano.resultado, plano.financeiro);
+
+        document.getElementById("btn-excluir").addEventListener("click", async () => {
+          if (!confirm(`Excluir o planejamento "${plano.nome}"? Esta ação não pode ser desfeita.`)) return;
+          await planningService.remover(id);
+          window.location.href = "planejamentos.html";
+        });
+
+        document.getElementById("btn-editar").addEventListener("click", () => {
+          // redireciona para o fluxo de criação com os dados pré-preenchidos
+          sessionStorage.setItem("fiscro:edicao", JSON.stringify(plano));
+          window.location.href = `negocio.html?editar=${id}`;
+        });
+      }
+
+      carregar();
+    </script>
+  </body>
+</html>
