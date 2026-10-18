@@ -670,6 +670,131 @@ main > h1 + .cartao {
   margin-top: 16px;
 }
 
+/* --- Tela 7 (Resultado, Renan) --- */
+/* Grade dos 6 indicadores: 1 coluna no celular, 2 no tablet, 3 no desktop.
+   minmax(0, 1fr) deixa a coluna encolher, então o texto nunca estoura a tela. */
+main > h1 + .grade-indicadores {
+  margin-top: 16px;
+}
+
+.grade-indicadores {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.indicador-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.indicador-topo .icone {
+  color: var(--cor-texto-sec);
+}
+
+.indicador-titulo {
+  margin: 0;
+  color: var(--cor-texto);
+  font-family: var(--fonte-texto);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.indicador-valor {
+  margin: 8px 0;
+  color: var(--cor-primaria);
+  font-family: var(--fonte-titulo);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.indicador-legenda {
+  margin: 0;
+  color: var(--cor-texto-sec);
+  font-size: 12.5px;
+}
+
+/* Situação de risco: ícone + texto + cor (RNF-05). */
+.indicador-risco {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--cor-erro-texto);
+  font-weight: 600;
+}
+
+/* Faixa dourada à esquerda: destaca o lucro. */
+.indicador-destaque {
+  border-left: 4px solid var(--cor-destaque);
+}
+
+/* <details> do cartão: o chevron é o último ícone do <summary> e gira ao abrir. */
+.explicacao {
+  margin-top: 24px;
+}
+
+.explicacao summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  list-style: none;
+  cursor: pointer;
+}
+
+.explicacao summary::-webkit-details-marker {
+  display: none;
+}
+
+.explicacao summary .icone:last-child {
+  margin-left: auto;
+}
+
+.explicacao[open] summary .icone:last-child {
+  transform: rotate(180deg);
+}
+
+.explicacao p {
+  margin: 8px 0 0;
+  color: var(--cor-texto-sec);
+}
+
+.alerta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  padding: 16px;
+  background: var(--cor-erro-fundo);
+  border: 1px solid var(--cor-erro);
+  border-left: 4px solid var(--cor-erro);
+  border-radius: var(--raio);
+  color: var(--cor-erro-texto);
+}
+
+.alerta p {
+  margin: 0;
+}
+
+/* Ícone dentro do aviso .dica (RF-28). */
+.dica .icone {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@media (min-width: 768px) {
+  .grade-indicadores {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grade-indicadores {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 /* ========== 6. RESPONSIVO ========== */
 
 /* Tablet em diante (768px ou mais) */
