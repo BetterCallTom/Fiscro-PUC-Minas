@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 1400" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <marker id="ag" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#0F3D3E"/></marker>
+    <marker id="ao" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#D4A017"/></marker>
+    <marker id="ay" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#9AA3A3"/></marker>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#C0392B"/></marker>
+  </defs>
+
+  <rect x="0" y="0" width="1180" height="1400" fill="#ffffff"/>
+
+  <text x="40" y="44" font-size="23" font-weight="800" fill="#0F3D3E">Fluxo do usuário do FISCRO</text>
+  <text x="40" y="68" font-size="13" fill="#6B7574">Do primeiro acesso à consulta de um planejamento salvo</text>
+
+  <!-- START -->
+  <rect x="415" y="80" width="130" height="38" rx="19" fill="#0F3D3E"/>
+  <text x="480" y="104" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff" letter-spacing="1">INÍCIO</text>
+
+  <!-- wizard container -->
+  <rect x="315" y="388" width="360" height="378" rx="14" fill="none" stroke="#D4A017" stroke-width="1.5" stroke-dasharray="5 5"/>
+  <text x="322" y="382" font-size="12" font-weight="700" fill="#B8860B">Formulário de planejamento em 3 etapas</text>
+
+  <!-- saved container -->
+  <rect x="315" y="1108" width="360" height="248" rx="14" fill="none" stroke="#0F3D3E" stroke-width="1.5" stroke-dasharray="5 5"/>
+  <text x="322" y="1102" font-size="12" font-weight="700" fill="#0F3D3E">Planejamentos (consulta)</text>
+
+  <!-- forward arrows -->
+  <line x1="480" y1="118" x2="480" y2="108" stroke="#0F3D3E" stroke-width="2.5" marker-end="url(#ag)"/>
+  <line x1="480" y1="182" x2="480" y2="248" stroke="#0F3D3E" stroke-width="2.5" marker-end="url(#ag)"/>
+  <line x1="480" y1="322" x2="480" y2="398" stroke="#0F3D3E" stroke-width="2.5" marker-end="url(#ag)"/>
+  <line x1="480" y1="472" x2="480" y2="538" stroke="#0F3D3E" stroke-width="2.5" marker-end="url(#ag)"/>
+  <line x1="480" y1="612" x2="480" y2="678" stroke="#0F3D3E" stroke-width="2.5" marker-end="url(#ag)"/>
+  <line x1="480" y1="752" x2="480" y2="818" stroke="#0F3D3E" stroke-width="2.5" marker-end="url(#ag)"/>
+  <line x1="480" y1="892" x2="480" y2="958" stroke="#0F3D3E" stroke-width="2.5" marker-end="url(#ag)"/>
+  <line x1="480" y1="1032" x2="480" y2="1118" stroke="#0F3D3E" stroke-width="2.5" marker-end="url(#ag)"/>
+  <line x1="480" y1="1192" x2="480" y2="1268" stroke="#0F3D3E" stroke-width="2.5" marker-end="url(#ag)"/>
+
+  <!-- forward labels -->
+  <g font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">
+    <rect x="500" y="204" width="140" height="24" rx="12" fill="#D4A017"/><text x="570" y="220">Entrar ou cadastrar</text>
+    <rect x="502" y="349" width="136" height="24" rx="12" fill="#D4A017"/><text x="570" y="365">Acessar o sistema</text>
+    <rect x="533" y="494" width="74" height="24" rx="12" fill="#D4A017"/><text x="570" y="510">Continuar</text>
+    <rect x="533" y="634" width="74" height="24" rx="12" fill="#D4A017"/><text x="570" y="650">Continuar</text>
+    <rect x="516" y="774" width="108" height="24" rx="12" fill="#D4A017"/><text x="570" y="790">Revisar dados</text>
+    <rect x="500" y="914" width="140" height="24" rx="12" fill="#D4A017"/><text x="570" y="930">Calcular viabilidade</text>
+    <rect x="502" y="1064" width="136" height="24" rx="12" fill="#D4A017"/><text x="570" y="1080">Salvar planejamento</text>
+    <rect x="506" y="1219" width="128" height="24" rx="12" fill="#D4A017"/><text x="570" y="1235">Abrir planejamento</text>
+  </g>
+
+  <!-- back edges: Voltar (gray dashed) -->
+  <g stroke="#9AA3A3" stroke-width="1.8" fill="none" stroke-dasharray="5 4">
+    <path d="M330,576 C250,560 250,452 330,436" marker-end="url(#ay)"/>
+    <path d="M330,716 C250,700 250,592 330,576" marker-end="url(#ay)"/>
+    <path d="M330,856 C250,840 250,732 330,716" marker-end="url(#ay)"/>
+    <path d="M330,996 C250,980 250,872 330,856" marker-end="url(#ay)"/>
+  </g>
+  <text x="236" y="770" font-size="12" fill="#6B7574" text-anchor="middle" transform="rotate(-90 236 770)">Voltar (etapa anterior)</text>
+
+  <!-- Editar dados (gold dashed) from Revisão back to form -->
+  <path d="M330,856 C168,796 168,496 330,436" stroke="#D4A017" stroke-width="1.8" fill="none" stroke-dasharray="6 4" marker-end="url(#ao)"/>
+  <text x="150" y="660" font-size="12" fill="#B8860B" text-anchor="middle" transform="rotate(-90 150 660)">Editar dados</text>
+
+  <!-- Novo planejamento (green solid) 8 -> 3 -->
+  <path d="M630,1156 C790,1096 790,496 630,436" stroke="#0F3D3E" stroke-width="2" fill="none" marker-end="url(#ag)"/>
+  <text x="806" y="800" font-size="12" font-weight="600" fill="#0F3D3E" text-anchor="middle" transform="rotate(90 806 800)">Novo planejamento</text>
+
+  <!-- Editar (gold dashed) 9 -> 3 -->
+  <path d="M630,1306 C892,1180 892,512 630,436" stroke="#D4A017" stroke-width="1.8" fill="none" stroke-dasharray="6 4" marker-end="url(#ao)"/>
+  <text x="908" y="860" font-size="12" fill="#B8860B" text-anchor="middle" transform="rotate(90 908 860)">Editar (pré-preenchido)</text>
+
+  <!-- Excluir (red dashed) 9 -> 8 -->
+  <path d="M630,1306 C724,1272 724,1190 630,1156" stroke="#C0392B" stroke-width="1.8" fill="none" stroke-dasharray="5 4" marker-end="url(#ar)"/>
+  <text x="742" y="1231" font-size="12" fill="#C0392B" text-anchor="middle" transform="rotate(90 742 1231)">Excluir</text>
+
+  <!-- boxes -->
+  <g>
+    <rect x="330" y="110" width="300" height="72" rx="10" fill="#ffffff" stroke="#0F3D3E" stroke-width="2"/>
+    <circle cx="364" cy="146" r="16" fill="#D4A017"/><text x="364" y="151" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">1</text>
+    <text x="392" y="141" font-size="16" font-weight="700" fill="#0F3D3E">Home</text>
+    <text x="392" y="161" font-size="11" fill="#6B7574">Página pública de apresentação</text>
+  </g>
+  <g>
+    <rect x="330" y="250" width="300" height="72" rx="10" fill="#ffffff" stroke="#0F3D3E" stroke-width="2"/>
+    <circle cx="364" cy="286" r="16" fill="#D4A017"/><text x="364" y="291" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">2</text>
+    <text x="392" y="281" font-size="16" font-weight="700" fill="#0F3D3E">Acesso</text>
+    <text x="392" y="301" font-size="11" fill="#6B7574">Login ou cadastro</text>
+  </g>
+  <g>
+    <rect x="330" y="400" width="300" height="72" rx="10" fill="#ffffff" stroke="#0F3D3E" stroke-width="2"/>
+    <circle cx="364" cy="436" r="16" fill="#D4A017"/><text x="364" y="441" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">3</text>
+    <text x="392" y="431" font-size="16" font-weight="700" fill="#0F3D3E">Dados do negócio</text>
+    <text x="392" y="451" font-size="11" fill="#6B7574">Etapa 1 (informações gerais)</text>
+  </g>
+  <g>
+    <rect x="330" y="540" width="300" height="72" rx="10" fill="#ffffff" stroke="#0F3D3E" stroke-width="2"/>
+    <circle cx="364" cy="576" r="16" fill="#D4A017"/><text x="364" y="581" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">4</text>
+    <text x="392" y="571" font-size="16" font-weight="700" fill="#0F3D3E">Produtos e serviços</text>
+    <text x="392" y="591" font-size="11" fill="#6B7574">Etapa 1B (itens, relação 1:N)</text>
+  </g>
+  <g>
+    <rect x="330" y="680" width="300" height="72" rx="10" fill="#ffffff" stroke="#0F3D3E" stroke-width="2"/>
+    <circle cx="364" cy="716" r="16" fill="#D4A017"/><text x="364" y="721" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">5</text>
+    <text x="392" y="711" font-size="16" font-weight="700" fill="#0F3D3E">Financeiro</text>
+    <text x="392" y="731" font-size="11" fill="#6B7574">Etapa 2 (custos e faturamento)</text>
+  </g>
+  <g>
+    <rect x="330" y="820" width="300" height="72" rx="10" fill="#ffffff" stroke="#0F3D3E" stroke-width="2"/>
+    <circle cx="364" cy="856" r="16" fill="#D4A017"/><text x="364" y="861" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">6</text>
+    <text x="392" y="851" font-size="16" font-weight="700" fill="#0F3D3E">Revisão</text>
+    <text x="392" y="871" font-size="11" fill="#6B7574">Confere e corrige antes de calcular</text>
+  </g>
+  <g>
+    <rect x="330" y="960" width="300" height="72" rx="10" fill="#ffffff" stroke="#0F3D3E" stroke-width="2"/>
+    <circle cx="364" cy="996" r="16" fill="#D4A017"/><text x="364" y="1001" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">7</text>
+    <text x="392" y="991" font-size="16" font-weight="700" fill="#0F3D3E">Resultado</text>
+    <text x="392" y="1011" font-size="11" fill="#6B7574">Indicadores de viabilidade</text>
+  </g>
+  <g>
+    <rect x="330" y="1120" width="300" height="72" rx="10" fill="#ffffff" stroke="#0F3D3E" stroke-width="2"/>
+    <circle cx="364" cy="1156" r="16" fill="#D4A017"/><text x="364" y="1161" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">8</text>
+    <text x="392" y="1151" font-size="16" font-weight="700" fill="#0F3D3E">Planejamentos salvos</text>
+    <text x="392" y="1171" font-size="11" fill="#6B7574">Lista dos planejamentos</text>
+  </g>
+  <g>
+    <rect x="330" y="1270" width="300" height="72" rx="10" fill="#ffffff" stroke="#0F3D3E" stroke-width="2"/>
+    <circle cx="364" cy="1306" r="16" fill="#D4A017"/><text x="364" y="1311" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">9</text>
+    <text x="392" y="1301" font-size="16" font-weight="700" fill="#0F3D3E">Detalhe do planejamento</text>
+    <text x="392" y="1321" font-size="11" fill="#6B7574">Dados e resultado, com editar ou excluir</text>
+  </g>
+
+  <!-- legend -->
+  <rect x="712" y="110" width="430" height="300" rx="12" fill="#F7F9F9" stroke="#D7DEDE" stroke-width="1"/>
+  <text x="732" y="140" font-size="14" font-weight="700" fill="#0F3D3E">Legenda</text>
+
+  <line x1="732" y1="168" x2="784" y2="168" stroke="#0F3D3E" stroke-width="2.5" marker-end="url(#ag)"/>
+  <text x="798" y="172" font-size="12" fill="#3a4443">Avançar (fluxo principal)</text>
+  <line x1="732" y1="196" x2="784" y2="196" stroke="#0F3D3E" stroke-width="2"/>
+  <text x="798" y="200" font-size="12" fill="#3a4443">Novo planejamento (volta ao início)</text>
+  <line x1="732" y1="224" x2="784" y2="224" stroke="#9AA3A3" stroke-width="1.8" stroke-dasharray="5 4"/>
+  <text x="798" y="228" font-size="12" fill="#3a4443">Voltar à etapa anterior</text>
+  <line x1="732" y1="252" x2="784" y2="252" stroke="#D4A017" stroke-width="1.8" stroke-dasharray="6 4"/>
+  <text x="798" y="256" font-size="12" fill="#3a4443">Editar dados</text>
+  <line x1="732" y1="280" x2="784" y2="280" stroke="#C0392B" stroke-width="1.8" stroke-dasharray="5 4"/>
+  <text x="798" y="284" font-size="12" fill="#3a4443">Excluir</text>
+
+  <line x1="732" y1="306" x2="1122" y2="306" stroke="#E2E8E8" stroke-width="1"/>
+  <text x="732" y="330" font-size="12" font-weight="700" fill="#0F3D3E">Menu superior (telas internas)</text>
+  <text x="732" y="352" font-size="12" fill="#3a4443">• Meus planejamentos → (8)</text>
+  <text x="732" y="372" font-size="12" fill="#3a4443">• Novo planejamento → (3)</text>
+  <text x="732" y="392" font-size="12" fill="#3a4443">• Sair → Acesso (2)</text>
+</svg>

@@ -1,14 +1,14 @@
 # Projeto de Interface
 
-O FISCRO é um sistema de apoio à criação e ao planejamento estratégico de pequenos negócios. A partir dos dados informados pelo empreendedor — informações gerais do negócio, produtos e serviços oferecidos e dados financeiros — o sistema calcula indicadores de viabilidade e apresenta um resumo do planejamento, que pode ser salvo e consultado depois.
+O FISCRO é um sistema de apoio à criação e ao planejamento estratégico de pequenos negócios. A partir dos dados informados pelo empreendedor (informações gerais do negócio, produtos e serviços oferecidos e dados financeiros), o sistema calcula indicadores de viabilidade e apresenta um resumo do planejamento, que pode ser salvo e consultado depois.
 
-A interface foi projetada para ser simples e sequencial: o usuário avança por etapas curtas, revisa o que preencheu antes de calcular e recebe os resultados em uma tela única. Todas as telas seguem o mesmo padrão estrutural — cabeçalho, conteúdo e rodapé — garantindo consistência visual e previsibilidade na navegação.
+A interface foi projetada para ser simples e sequencial: o usuário avança por etapas curtas, revisa o que preencheu antes de calcular e recebe os resultados em uma tela única. Todas as telas seguem o mesmo padrão estrutural, com cabeçalho, conteúdo e rodapé, garantindo consistência visual e previsibilidade na navegação.
 
 ## User Flow
 
 O diagrama abaixo mostra o caminho do usuário pelo sistema, do primeiro acesso até a consulta de um planejamento salvo.
 
-![Fluxo do usuário](img/10-fluxo.png)
+![Fluxo do usuário](img/10-fluxo.svg)
 
 O percurso principal é linear: a partir da Home, o usuário se autentica e preenche o formulário em três etapas (dados do negócio, produtos e serviços, dados financeiros). Antes do cálculo, a tela de Revisão permite conferir e corrigir o que foi informado. Calculada a viabilidade, o resultado pode ser salvo e consultado a qualquer momento na lista de planejamentos, onde cada item abre sua própria tela de detalhe.
 
@@ -40,7 +40,7 @@ Segunda parte da primeira etapa. Registra o que o negócio oferece, com preço e
 
 ### 5. Financeiro
 
-Segunda etapa do formulário. Reúne investimento inicial, custos fixos, custos variáveis e faturamento projetado — os dados que alimentam o cálculo de viabilidade. Campos sem valor exato podem ser deixados em branco.
+Segunda etapa do formulário. Reúne investimento inicial, custos fixos, custos variáveis e faturamento projetado, que são os dados que alimentam o cálculo de viabilidade. Campos sem valor exato podem ser deixados em branco.
 
 ![Tela 5 - Financeiro](img/05-financeiro.png)
 
